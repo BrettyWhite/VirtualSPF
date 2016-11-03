@@ -1,4 +1,4 @@
-![VirtualSPF: Watch out for those UV rays!](http://brettmcisaac.com/vspf.png)
+# VirtualSPF
 
 ## Overview
 
@@ -40,5 +40,4 @@ as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
 ## The App
 
-![VirtualSPF: screenshot1](http://brettmcisaac.com/vspf1.png)
-![VirtualSPF: screenshot2](http://brettmcisaac.com/vspf2.png)
+[App Store Link](https://itunes.apple.com/us/app/virtualspf/id1024698135?mt=8)

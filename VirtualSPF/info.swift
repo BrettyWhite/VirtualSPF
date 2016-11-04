@@ -2,8 +2,8 @@
 //  info.swift
 //  VirtualSPF
 //
-//  Created by brettwmc on 7/26/15.
-//  Copyright (c) 2015 brettwmc. All rights reserved.
+//  Created by brettywhite on 7/26/15.
+//  Copyright (c) 2015 brettywhite. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +23,7 @@ class info: UIViewController {
         
         // set title
         self.navigationItem.title = "Virtual SPF"
-        self.navigationController!.navigationBar.barTintColor = UIColor.yellowColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor.yellow
         
         //call function
         setLabel()
@@ -47,7 +47,7 @@ class info: UIViewController {
     func appVersion() -> String {
         
         // this is what actually grabs the version number
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         
     }
 

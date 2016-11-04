@@ -2,14 +2,38 @@
 //  explainationView.swift
 //  VirtualSPF
 //
-//  Created by brettwmc on 7/26/15.
-//  Copyright (c) 2015 brettwmc. All rights reserved.
+//  Created by brettywhite on 7/26/15.
+//  Copyright (c) 2015 brettywhite. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 import SwiftyJSON
 import MBProgressHUD
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class explainationView: UIViewController {
     
@@ -31,7 +55,7 @@ class explainationView: UIViewController {
         
         // Change title
         self.navigationItem.title = "Virtual SPF - Information"
-        self.navigationController!.navigationBar.barTintColor = UIColor.yellowColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor.yellow
         
         // call function to set the info
         self.initView()
@@ -42,7 +66,7 @@ class explainationView: UIViewController {
         
         // play with adjusting sizing on different screens
         
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         //let screenHeight = screenSize.height
         
@@ -67,7 +91,7 @@ class explainationView: UIViewController {
         
         if (uvint >= 11) {
             
-            self.view.backgroundColor = UIColor(CGColor: UIColor(rgba: "#ff0000").CGColor)
+            self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#ff0000").cgColor)
             
             uviLabel?.text = UVValue
             
@@ -77,7 +101,7 @@ class explainationView: UIViewController {
             
         }else if (uvint >= 8){
             
-            self.view.backgroundColor = UIColor(CGColor: UIColor(rgba: "#ff9900").CGColor)
+            self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#ff9900").cgColor)
             
             uviLabel?.text = UVValue
             
@@ -87,7 +111,7 @@ class explainationView: UIViewController {
             
         }else if (uvint >= 6){
             
-            self.view.backgroundColor = UIColor(CGColor: UIColor(rgba: "#ffcc00").CGColor)
+            self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#ffcc00").cgColor)
             
             uviLabel?.text = UVValue
             
@@ -97,7 +121,7 @@ class explainationView: UIViewController {
             
         }else if (uvint >= 3){
             
-            self.view.backgroundColor = UIColor(CGColor: UIColor(rgba: "#ffff66").CGColor)
+            self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#ffff66").cgColor)
             
             uviLabel?.text = UVValue
             
@@ -107,7 +131,7 @@ class explainationView: UIViewController {
             
         }else if (uvint >= 0){
             
-            self.view.backgroundColor = UIColor(CGColor: UIColor(rgba: "#1cd61c").CGColor)
+            self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#1cd61c").cgColor)
             
             uviLabel?.text = UVValue
             

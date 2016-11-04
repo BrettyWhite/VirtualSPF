@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B8E7BDA01E8277A356B53BF9'
+               BlueprintIdentifier = 'E43FCFC23B32B3CFA7CCA1B4'
                BlueprintName = 'Pods-VirtualSPF'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_VirtualSPF.framework'>

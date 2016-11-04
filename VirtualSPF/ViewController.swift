@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  VirtualSPF
 //
-//  Created by brettwmc on 7/26/15.
-//  Copyright (c) 2015 brettwmc. All rights reserved.
+//  Created by brettywhite on 7/26/15.
+//  Copyright (c) 2015 brettywhite. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +11,31 @@ import Alamofire
 import SwiftyJSON
 import CoreLocation
 import MBProgressHUD
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource{
     
@@ -31,7 +56,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         super.viewDidLoad()
 
         // change color
-        self.navigationController!.navigationBar.barTintColor = UIColor.yellowColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor.yellow
         
         // gather location data
         initLocationManager()
@@ -45,7 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     
     // MARK: Networking
 
-    func getWeather(zip : NSString){
+    func getWeather(_ zip : NSString){
         
         // Build URL with coords from zip
         let weatherEndpoint: String = "http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/\(zip)/JSON"
@@ -53,41 +78,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         // Use alamofire and a GET request to get weather data from EPA.
         // Use SwiftyJSON to Handle JSON response
         
-        Alamofire.request(.GET, weatherEndpoint, encoding: .JSON)
-            .response { (req, res, json, error) in
-                if  (error != nil)
-                {
-                    // stop the hud
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                    // got an error in getting the data, need to handle it
-                    print("error calling URL")
-                    print(error)
-                }
-                else if let data: AnyObject = json
-                {
-                    // stop the hud
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
+            
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                     
-                    let jsondata = JSON(data: data as! NSData)
+                    // stop the hud
+                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+                    
+                    let jsondata = JSON(data:data as Data)
                     
                     let weather = jsondata
                     
-                    print(weather)
-                    
                     // Call method to handle response
                     self.iterateResponse(weather)
-                }
+                }else{
+                    // stop the hud
+                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+            }
         }
-    
     }
     
     // MARK: Response Handeling
     
-    func iterateResponse(data : JSON){
+    func iterateResponse(_ data : JSON){
         
         // set to global var we will use around the class
         weatherArray = data
-        
+        print(weatherArray)
         // call reload to tableview so it can now sort through the data
         tableView.reloadData()
         
@@ -95,17 +112,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     
     // MARK: Table Stuff
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // return number of objects in weatherarray
         return self.weatherArray.count;
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // since we are using a prototype cell, we find it on the storyboard here, not in the register call in VDL
-        cell = tableView.dequeueReusableCellWithIdentifier("mainCellID", forIndexPath: indexPath) as? mainCell
+        cell = tableView.dequeueReusableCell(withIdentifier: "mainCellID", for: indexPath) as? mainCell
         
         // parse out individual items from each object to display in the cell
         let uvi = weatherArray[indexPath.row]["UV_VALUE"]
@@ -119,7 +136,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         // set info to outlets in the cell. dont forget to connect outlets in the storyboard
         //dispatch_async(dispatch_get_main_queue()) {
-            self.cell!.selectionStyle = UITableViewCellSelectionStyle.None
+            self.cell!.selectionStyle = UITableViewCellSelectionStyle.none
             self.cell!.uviLabel.text = cellUVI
             self.cell!.timeLabel.text = cellTime
             //print(self.cell!.uviLabel.text)
@@ -131,18 +148,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         let uvint: Int? = Int(cellUVI)
         
         var strokeColor: UIColor
-        strokeColor = UIColor(CGColor: UIColor(rgba: "#fff").CGColor)
+        strokeColor = UIColor(cgColor: UIColor(rgba: "#fff").cgColor)
         
         if (uvint >= 11) {
-            strokeColor = UIColor(CGColor: UIColor(rgba: "#ff0000").CGColor)
+            strokeColor = UIColor(cgColor: UIColor(rgba: "#ff0000").cgColor)
         }else if (uvint >= 8){
-            strokeColor = UIColor(CGColor: UIColor(rgba: "#ff9900").CGColor)
+            strokeColor = UIColor(cgColor: UIColor(rgba: "#ff9900").cgColor)
         }else if (uvint >= 6){
-            strokeColor = UIColor(CGColor: UIColor(rgba: "#ffcc00").CGColor)
+            strokeColor = UIColor(cgColor: UIColor(rgba: "#ffcc00").cgColor)
         }else if (uvint >= 3){
-            strokeColor = UIColor(CGColor: UIColor(rgba: "#ffff66").CGColor)
+            strokeColor = UIColor(cgColor: UIColor(rgba: "#ffff66").cgColor)
         }else if (uvint >= 0){
-            strokeColor = UIColor(CGColor: UIColor(rgba: "#1cd61c").CGColor)
+            strokeColor = UIColor(cgColor: UIColor(rgba: "#1cd61c").cgColor)
         }
 
         // set cell bg color
@@ -152,7 +169,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         return cell!
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //println("You selected cell #\(indexPath.row)!")
         
@@ -173,52 +190,52 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         //check to see if the user has 1. allowed location access or 2. denied it.
         // if 1, we will request it via an alert, if 2, display an alert saying this wont work without permission
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
             
             // if not determined, ask permission
             locationManager.requestWhenInUseAuthorization()
             
-        }else if CLLocationManager.authorizationStatus() == .Denied{
+        }else if CLLocationManager.authorizationStatus() == .denied{
             
-            settingsBTN?.hidden = false
+            settingsBTN?.isHidden = false
             
             // if denied, show alert
             let alertController = UIAlertController(
                 title: "Location Access Disabled",
                 message: "In order to get UV Index data for you, you need to enable location access, but for only when you use the app. We never access location when the app is not in use.",
-                preferredStyle: .Alert)
+                preferredStyle: .alert)
             
             // cancel button
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
             
             // link to app settings. this is important to have
-            let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                    UIApplication.sharedApplication().openURL(url)
+            let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+                if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                    UIApplication.shared.openURL(url)
                 }
             }
             alertController.addAction(openAction)
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         
         // init GPS tracking
         locationManager.startUpdatingLocation()
         
         // start HUD
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        hud.labelText = "Finding The Sun";
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.labelText = "Finding The Sun";
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // only do this if we have a location fix
         if (locationFixAchieved == false) {
             
             // hide enable location btn
-            settingsBTN?.hidden = true
+            settingsBTN?.isHidden = true
             
             locationFixAchieved = true
             
@@ -266,17 +283,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
         // if it fails, stop trying to grab the location
         locationManager.stopUpdatingLocation()
         // stop the hud
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
         print("Error with location manager")
         
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
         // the reason this is important is if the class is already initialised and the user goes into settings
         // and changes the permission, this callback allows us to either 1. start gathering the location to show
@@ -284,35 +301,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         switch CLLocationManager.authorizationStatus() {
             
-        case .NotDetermined:
+        case .notDetermined:
             
             // display the popup asking permission
             locationManager.requestAlwaysAuthorization()
-        case .AuthorizedWhenInUse:
+        case .authorizedWhenInUse:
             
             // if authroized get location
             locationManager.startUpdatingLocation()
-        case  .Restricted, .Denied:
-            settingsBTN?.hidden = false
+        case  .restricted, .denied:
+            settingsBTN?.isHidden = false
             //if denied, show alert why it wont work without permission
             let alertController = UIAlertController(
                 title: "Location Access Disabled",
                 message: "In order to get UV Index data for you, you need to enable location access, but for only when you use the app. We never access location when the app is not in use.",
-                preferredStyle: .Alert)
+                preferredStyle: .alert)
             
             // cancel button
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
             
             // link to app settings. this is important to have
-            let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                    UIApplication.sharedApplication().openURL(url)
+            let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+                if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                    UIApplication.shared.openURL(url)
                 }
             }
             alertController.addAction(openAction)
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
             // Switch / cases in swift require a "default" to fall back on, in this case, we will break
             default: break
@@ -321,28 +338,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     
     //MARK: other stuff
     
-    @IBAction func openSettings(sender: UIButton) {
+    @IBAction func openSettings(_ sender: UIButton) {
         let alertController = UIAlertController(
             title: "Location Access Disabled",
             message: "In order to get UV Index data for you, you need to enable location access, but for only when you use the app. We never access location when the app is not in use.",
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
         // cancel button
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
         // link to app settings. this is important to have
-        let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-            if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                UIApplication.sharedApplication().openURL(url)
+        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+            if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.openURL(url)
             }
         }
         alertController.addAction(openAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //this function is a "catch all" for any segues from this class. we can catch specific segues by using their identifier on the storyboard
         if segue.identifier == "explainSegue" {
@@ -356,7 +373,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             let cellUVI: String = "\(uvi)"
             
             //define the controller that we are going to open with the segue to access its class vars
-            let yourNextViewController = (segue.destinationViewController as! explainationView)
+            let yourNextViewController = (segue.destination as! explainationView)
             
             //set the value we need for the next controller
             yourNextViewController.UVValue = cellUVI

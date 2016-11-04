@@ -80,7 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
             
-                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                if let data = response.data, let _ = String(data: data, encoding: .utf8) {
                     
                     // stop the hud
                     MBProgressHUD.hideAllHUDs(for: self.view, animated: true)

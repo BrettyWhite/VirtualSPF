@@ -32,21 +32,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-gu-d4e">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-gu-d4e">
+                                                    <rect key="frame" x="20" y="-7" width="91" height="91"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="91" id="FmB-Nj-a6u"/>
+                                                        <constraint firstAttribute="height" constant="91" id="fhY-m9-ODn"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-ef-ZmM">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2015 other crap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-ef-ZmM">
+                                                    <rect key="frame" x="90" y="3" width="245" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gaS-ef-ZmM" secondAttribute="bottom" constant="4" id="61L-eO-9QL"/>
+                                                <constraint firstItem="Jo8-gu-d4e" firstAttribute="leading" secondItem="J4c-LJ-hB1" secondAttribute="leading" constant="20" id="6rx-dm-T09"/>
+                                                <constraint firstItem="gaS-ef-ZmM" firstAttribute="top" secondItem="J4c-LJ-hB1" secondAttribute="top" constant="3" id="M5M-ja-I2e"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jo8-gu-d4e" secondAttribute="bottom" constant="-7" id="cGt-aw-byN"/>
+                                                <constraint firstAttribute="trailing" secondItem="gaS-ef-ZmM" secondAttribute="trailing" constant="-15" id="ff5-Wr-91I"/>
+                                                <constraint firstItem="gaS-ef-ZmM" firstAttribute="leading" secondItem="Jo8-gu-d4e" secondAttribute="trailing" constant="-21" id="hfs-Ot-mjt"/>
+                                                <constraint firstItem="Jo8-gu-d4e" firstAttribute="top" secondItem="J4c-LJ-hB1" secondAttribute="top" constant="-7" id="jk6-IC-kHM"/>
+                                            </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Jo8-gu-d4e"/>
@@ -72,36 +83,16 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="dQF-KO-1Fq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8A-sE-VnR">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Enable Location">
-                                    <color key="titleColor" red="1" green="0.97246192929999997" blue="0.04021505769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="openSettings:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GiE-l3-h3k"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bII-Ap-ZY9" secondAttribute="trailing" id="0uX-M2-258"/>
-                            <constraint firstAttribute="trailing" secondItem="m8A-sE-VnR" secondAttribute="trailing" id="3fD-G0-Go8"/>
-                            <constraint firstItem="m8A-sE-VnR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="6vl-H2-5JY"/>
                             <constraint firstItem="bII-Ap-ZY9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BEV-3I-P2q"/>
-                            <constraint firstAttribute="bottom" secondItem="m8A-sE-VnR" secondAttribute="bottom" constant="311" id="Bxh-Vy-H0Q"/>
                             <constraint firstAttribute="bottom" secondItem="bII-Ap-ZY9" secondAttribute="bottom" id="F9i-eE-LLb"/>
                             <constraint firstItem="bII-Ap-ZY9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="aln-gr-cue"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="m8A-sE-VnR"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="3fD-G0-Go8"/>
-                                <exclude reference="6vl-H2-5JY"/>
-                                <exclude reference="Bxh-Vy-H0Q"/>
                                 <exclude reference="0uX-M2-258"/>
                                 <exclude reference="BEV-3I-P2q"/>
                                 <exclude reference="F9i-eE-LLb"/>
@@ -109,13 +100,7 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="m8A-sE-VnR"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="3fD-G0-Go8"/>
-                                <include reference="6vl-H2-5JY"/>
-                                <include reference="Bxh-Vy-H0Q"/>
                                 <include reference="0uX-M2-258"/>
                                 <include reference="BEV-3I-P2q"/>
                                 <include reference="F9i-eE-LLb"/>
@@ -132,13 +117,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="infoBtn" destination="S0D-0s-atc" id="qdf-Ie-hGN"/>
-                        <outlet property="settingsBTN" destination="m8A-sE-VnR" id="tnJ-CK-C5q"/>
                         <outlet property="tableView" destination="bII-Ap-ZY9" id="hkw-ph-slX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="429"/>
+            <point key="canvasLocation" x="1128.8" y="428.63568215892059"/>
         </scene>
         <!--Info-->
         <scene sceneID="u0g-wz-LDR">

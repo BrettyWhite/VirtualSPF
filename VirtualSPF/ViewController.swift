@@ -104,7 +104,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         // set to global var we will use around the class
         weatherArray = data
-        print(weatherArray)
+
         // call reload to tableview so it can now sort through the data
         tableView.reloadData()
         
@@ -212,7 +212,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             // link to app settings. this is important to have
             let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
                 if let url = URL(string:UIApplicationOpenSettingsURLString) {
-                    UIApplication.shared.openURL(url)
+                    UIApplication.shared.open(url)
+                    
                 }
             }
             alertController.addAction(openAction)
@@ -324,7 +325,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             // link to app settings. this is important to have
             let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
                 if let url = URL(string:UIApplicationOpenSettingsURLString) {
-                    UIApplication.shared.openURL(url)
+                    UIApplication.shared.open(url)
                 }
             }
             alertController.addAction(openAction)
@@ -351,7 +352,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         // link to app settings. this is important to have
         let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
             if let url = URL(string:UIApplicationOpenSettingsURLString) {
-                UIApplication.shared.openURL(url)
+                UIApplication.shared.open(url)
             }
         }
         alertController.addAction(openAction)

@@ -37,7 +37,7 @@ class ExplainationView: UIViewController {
         self.setScreenSize()
     }
 
-    func setScreenSize() {
+    fileprivate func setScreenSize() {
 
         // play with adjusting sizing on different screens
         let screenSize: CGRect = UIScreen.main.bounds
@@ -55,7 +55,7 @@ class ExplainationView: UIViewController {
     
         Information gathered from http://www2.epa.gov/sunwise/uv-index-scale on July 28, 2015
     */
-    func initView() {
+    fileprivate func initView() {
         // convert to int
         let uvint: Int = Int(UVValue)!
 
@@ -80,11 +80,13 @@ class ExplainationView: UIViewController {
             descLabel?.text = "A UV Index reading of 6 to 7 means high risk of harm from unprotected sun exposure. Protection against skin and eye damage is needed."
             expLabel?.text = "•Reduce time in the sun between 10 a.m. and 4 p.m. \n\n•If outdoors, seek shade and wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. \n\n•Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. \n\n•Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure."
         } else if uvint >= 3 {
+
             self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#ffff66").cgColor)
             uviLabel?.text = UVValue
             descLabel?.text = "A UV Index reading of 3 to 5 means moderate risk of harm from unprotected sun exposure."
             expLabel?.text = "•Stay in shade near midday when the sun is strongest. \n\n•If outdoors, wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. \n\n•Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. \n\n•Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure."
         } else if uvint >= 0 {
+            
             self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#1cd61c").cgColor)
             uviLabel?.text = UVValue
             descLabel?.text = "A UV Index reading of 0 to 2 means low danger from the sun's UV rays for the average person."

@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (4.0.1)
+  - MBProgressHUD (0.9.2)
+  - SwiftyJSON (3.1.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - MBProgressHUD (~> 0.8)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module Pods_VirtualSPF {
+  umbrella header "Pods-VirtualSPF-umbrella.h"
+
+  export *
+  module * { export * }
+}

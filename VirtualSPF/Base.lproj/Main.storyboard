@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APt-At-ljP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APt-At-ljP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                         <subviews>
                             <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bII-Ap-ZY9">
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="mainCellID" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCellID" rowHeight="77" id="sQx-pG-iYi" customClass="mainCell" customModule="VirtualSPF" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="MainCellID" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCellID" rowHeight="77" id="sQx-pG-iYi" customClass="MainCell" customModule="VirtualSPF" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="0.0" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQx-pG-iYi" id="J4c-LJ-hB1">
@@ -127,7 +127,7 @@
         <!--Info-->
         <scene sceneID="u0g-wz-LDR">
             <objects>
-                <viewController id="7B4-yd-Hc7" customClass="info" customModule="VirtualSPF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7B4-yd-Hc7" customClass="Info" customModule="VirtualSPF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gtW-sj-DfM"/>
                         <viewControllerLayoutGuide type="bottom" id="htP-yA-pXp"/>

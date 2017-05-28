@@ -16,7 +16,7 @@
 		75AABEED1B6684EF004E545E /* Pods_VirtualSPF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */; };
 		75AABEEE1B6684EF004E545E /* Pods_VirtualSPF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEF01B66A0C8004E545E /* UIColorExtension.swift */; };
-		75AABF081B67DD0F004E545E /* mainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* mainCell.swift */; };
+		75AABF081B67DD0F004E545E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* MainCell.swift */; };
 		75AABF0A1B67F4FF004E545E /* vspfbigclear.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AABF091B67F4FF004E545E /* vspfbigclear.png */; };
 		75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0B1B6814FA004E545E /* CoreLocation.framework */; };
 		75AABF0F1B6819F5004E545E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0E1B6819F5004E545E /* iAd.framework */; };
@@ -50,7 +50,7 @@
 		75AABEDB1B65C264004E545E /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "Pods/../build/Debug-iphoneos/SwiftHTTP.framework"; sourceTree = "<group>"; };
 		75AABEDD1B65C27B004E545E /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_VirtualSPF.framework; path = "Pods/../build/Debug-iphoneos/Pods_VirtualSPF.framework"; sourceTree = "<group>"; };
 		75AABEF01B66A0C8004E545E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		75AABF071B67DD0F004E545E /* mainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCell.swift; sourceTree = "<group>"; };
+		75AABF071B67DD0F004E545E /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		75AABF091B67F4FF004E545E /* vspfbigclear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vspfbigclear.png; sourceTree = "<group>"; };
 		75AABF0B1B6814FA004E545E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		75AABF0E1B6819F5004E545E /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -145,7 +145,7 @@
 		75AABF061B67DCE7004E545E /* Cell Classes */ = {
 			isa = PBXGroup;
 			children = (
-				75AABF071B67DD0F004E545E /* mainCell.swift */,
+				75AABF071B67DD0F004E545E /* MainCell.swift */,
 			);
 			name = "Cell Classes";
 			sourceTree = "<group>";
@@ -194,6 +194,7 @@
 				1E55B7F167FE1F6FA67D165F /* Embed Pods Frameworks */,
 				99B34A2CF9849A725AA7C022 /* Copy Pods Resources */,
 				75AABEEF1B6684EF004E545E /* Embed Frameworks */,
+				7555AFC71EDA58F100112C72 /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -269,6 +270,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7555AFC71EDA58F100112C72 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		961075DDA0FE95F054453AC9 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,7 +323,7 @@
 			files = (
 				75AABEBE1B65A98B004E545E /* ViewController.swift in Sources */,
 				75AABEBC1B65A98B004E545E /* AppDelegate.swift in Sources */,
-				75AABF081B67DD0F004E545E /* mainCell.swift in Sources */,
+				75AABF081B67DD0F004E545E /* MainCell.swift in Sources */,
 				75AABF141B683182004E545E /* info.swift in Sources */,
 				75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */,
 				75AABF121B681BE3004E545E /* explainationView.swift in Sources */,

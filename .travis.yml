@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode7.1
 script:
-  - xcodebuild -scheme VirtualSPF -workspace VirtualSPF.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iphonesimulator10.3,OS=10.3' build test
+  - xcodebuild -scheme VirtualSPF -workspace VirtualSPF.xcworkspace -sdk "iphonesimulator10.3" -destination "OS=10.3,name=iPhone 7" -configuration Debug ONLY_ACTIVE_ARCH=NO RUN_CLANG_STATIC_ANALYZER=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ENABLE_TESTABILITY=YES test | xcpretty -c;
 after_success:
   - bash <(curl -s https://codecov.io/bash)

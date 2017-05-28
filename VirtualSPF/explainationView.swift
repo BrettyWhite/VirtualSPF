@@ -3,7 +3,7 @@
 //  VirtualSPF
 //
 //  Created by brettywhite on 7/26/15.
-//  Copyright (c) 2015 brettywhite. All rights reserved.
+//  Copyright (c) 2017 brettywhite. All rights reserved.
 //
 
 import UIKit
@@ -13,10 +13,8 @@ import MBProgressHUD
 
 class ExplainationView: UIViewController {
 
-    // This value is what was set in the segue function in ViewController.swift
     var UVValue: String!
 
-    //outlets
     @IBOutlet weak var uviLabel: UILabel?
     @IBOutlet weak var descLabel: UILabel?
     @IBOutlet weak var expLabel: UILabel?
@@ -29,10 +27,8 @@ class ExplainationView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Change title
         self.navigationItem.title = "Virtual SPF - Information"
         self.navigationController!.navigationBar.barTintColor = UIColor.yellow
-        // call function to set the info
         self.initView()
         self.setScreenSize()
     }
@@ -53,10 +49,10 @@ class ExplainationView: UIViewController {
         This project was not meant to be fancy. Since the information is rarely updated and there is so little of
         it, we will just manually set it in the controller itself. No reason to make a network request for it.
     
-        Information gathered from http://www2.epa.gov/sunwise/uv-index-scale on July 28, 2015
+        Information gathered from http://www2.epa.gov/sunwise/uv-index-scale
     */
     fileprivate func initView() {
-        // convert to int
+
         let uvint: Int = Int(UVValue)!
 
         if uvint >= 11 {
@@ -86,7 +82,7 @@ class ExplainationView: UIViewController {
             descLabel?.text = "A UV Index reading of 3 to 5 means moderate risk of harm from unprotected sun exposure."
             expLabel?.text = "•Stay in shade near midday when the sun is strongest. \n\n•If outdoors, wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. \n\n•Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. \n\n•Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure."
         } else if uvint >= 0 {
-            
+
             self.view.backgroundColor = UIColor(cgColor: UIColor(rgba: "#1cd61c").cgColor)
             uviLabel?.text = UVValue
             descLabel?.text = "A UV Index reading of 0 to 2 means low danger from the sun's UV rays for the average person."

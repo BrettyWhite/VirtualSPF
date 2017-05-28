@@ -17,7 +17,6 @@
 		75AABEEE1B6684EF004E545E /* Pods_VirtualSPF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEF01B66A0C8004E545E /* UIColorExtension.swift */; };
 		75AABF081B67DD0F004E545E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* MainCell.swift */; };
-		75AABF0A1B67F4FF004E545E /* vspfbigclear.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AABF091B67F4FF004E545E /* vspfbigclear.png */; };
 		75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0B1B6814FA004E545E /* CoreLocation.framework */; };
 		75AABF0F1B6819F5004E545E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0E1B6819F5004E545E /* iAd.framework */; };
 		75AABF121B681BE3004E545E /* explainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF111B681BE3004E545E /* explainationView.swift */; };
@@ -51,7 +50,6 @@
 		75AABEDD1B65C27B004E545E /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_VirtualSPF.framework; path = "Pods/../build/Debug-iphoneos/Pods_VirtualSPF.framework"; sourceTree = "<group>"; };
 		75AABEF01B66A0C8004E545E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		75AABF071B67DD0F004E545E /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
-		75AABF091B67F4FF004E545E /* vspfbigclear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vspfbigclear.png; sourceTree = "<group>"; };
 		75AABF0B1B6814FA004E545E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		75AABF0E1B6819F5004E545E /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		75AABF111B681BE3004E545E /* explainationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainationView.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		75AABEAD1B65A98B004E545E = {
 			isa = PBXGroup;
 			children = (
-				75AABEF21B66A8DB004E545E /* Resources */,
 				75AABEB81B65A98B004E545E /* VirtualSPF */,
 				75AABEB71B65A98B004E545E /* Products */,
 				D44889EC5613A59A8230865A /* Pods */,
@@ -124,22 +121,6 @@
 				75AABEBA1B65A98B004E545E /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		75AABEF21B66A8DB004E545E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				75AABEF31B66A8E2004E545E /* IMGS */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		75AABEF31B66A8E2004E545E /* IMGS */ = {
-			isa = PBXGroup;
-			children = (
-				75AABF091B67F4FF004E545E /* vspfbigclear.png */,
-			);
-			name = IMGS;
 			sourceTree = "<group>";
 		};
 		75AABF061B67DCE7004E545E /* Cell Classes */ = {
@@ -246,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75AABEC11B65A98B004E545E /* Main.storyboard in Resources */,
-				75AABF0A1B67F4FF004E545E /* vspfbigclear.png in Resources */,
 				75AABEC61B65A98B004E545E /* LaunchScreen.xib in Resources */,
 				75AABEC31B65A98B004E545E /* Images.xcassets in Resources */,
 			);

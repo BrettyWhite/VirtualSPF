@@ -1,8 +1,7 @@
-# VirtualSPF
 
 ## Overview
 
-Uses Swift 2.3 - Not tested on 3.0
+Uses Swift 3
 
 I created this project as a way to 1. play with Swift and 2. I wanted to build it for my own use. vSPF uses the EPA's Envirofacts API and GPS to display the UV Index for the day, and gives a brief explaination of things to do to help mitigate UV exposure. Kudos to the EPA for this freely available weather API.
 
@@ -37,7 +36,3 @@ As I did this as a first Swift Project, there may be things that could be done b
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
-
-## The App
-
-[App Store Link](https://itunes.apple.com/us/app/virtualspf/id1024698135?mt=8)

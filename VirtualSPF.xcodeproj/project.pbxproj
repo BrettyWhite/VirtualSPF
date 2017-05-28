@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750138FC1EDAF078008FB7B9 /* explainationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */; };
+		750138FE1EDAF098008FB7B9 /* infoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750138FD1EDAF098008FB7B9 /* infoTest.swift */; };
 		75AABEBC1B65A98B004E545E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEBB1B65A98B004E545E /* AppDelegate.swift */; };
 		75AABEBE1B65A98B004E545E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEBD1B65A98B004E545E /* ViewController.swift */; };
 		75AABEC11B65A98B004E545E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEBF1B65A98B004E545E /* Main.storyboard */; };
 		75AABEC31B65A98B004E545E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEC21B65A98B004E545E /* Images.xcassets */; };
 		75AABEC61B65A98B004E545E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEC41B65A98B004E545E /* LaunchScreen.xib */; };
-		75AABEDE1B65C27B004E545E /* Pods_VirtualSPF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABEDD1B65C27B004E545E /* Pods_VirtualSPF.framework */; };
-		75AABEED1B6684EF004E545E /* Pods_VirtualSPF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */; };
-		75AABEEE1B6684EF004E545E /* Pods_VirtualSPF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEF01B66A0C8004E545E /* UIColorExtension.swift */; };
 		75AABF081B67DD0F004E545E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* MainCell.swift */; };
 		75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0B1B6814FA004E545E /* CoreLocation.framework */; };
 		75AABF0F1B6819F5004E545E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0E1B6819F5004E545E /* iAd.framework */; };
 		75AABF121B681BE3004E545E /* explainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF111B681BE3004E545E /* explainationView.swift */; };
 		75AABF141B683182004E545E /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF131B683182004E545E /* info.swift */; };
-		75FFA0191EDA702E008E8114 /* VirtualSPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA0181EDA702E008E8114 /* VirtualSPFTests.swift */; };
+		75FFA0191EDA702E008E8114 /* mainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75AABEEE1B6684EF004E545E /* Pods_VirtualSPF.framework in Embed Frameworks */,
+				75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		53A792E0C3076EC91A3BB0B1 /* Pods-VirtualSPF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPF.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF.release.xcconfig"; sourceTree = "<group>"; };
+		750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainationViewTests.swift; sourceTree = "<group>"; };
+		750138FD1EDAF098008FB7B9 /* infoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoTest.swift; sourceTree = "<group>"; };
 		75AABEB61B65A98B004E545E /* VirtualSPF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSPF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AABEBA1B65A98B004E545E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75AABEBB1B65A98B004E545E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		75AABEC21B65A98B004E545E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		75AABEC51B65A98B004E545E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		75AABEDB1B65C264004E545E /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "Pods/../build/Debug-iphoneos/SwiftHTTP.framework"; sourceTree = "<group>"; };
-		75AABEDD1B65C27B004E545E /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_VirtualSPF.framework; path = "Pods/../build/Debug-iphoneos/Pods_VirtualSPF.framework"; sourceTree = "<group>"; };
 		75AABEF01B66A0C8004E545E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		75AABF071B67DD0F004E545E /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		75AABF0B1B6814FA004E545E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -66,10 +66,8 @@
 		75AABF111B681BE3004E545E /* explainationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainationView.swift; sourceTree = "<group>"; };
 		75AABF131B683182004E545E /* info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = info.swift; sourceTree = "<group>"; };
 		75FFA0161EDA702E008E8114 /* VirtualSPFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSPFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		75FFA0181EDA702E008E8114 /* VirtualSPFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSPFTests.swift; sourceTree = "<group>"; };
+		75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewControllerTests.swift; sourceTree = "<group>"; };
 		75FFA01A1EDA702E008E8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFB4F396EB3F9F5E1746488F /* Pods-VirtualSPF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF.debug.xcconfig"; sourceTree = "<group>"; };
-		D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSPF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +77,6 @@
 			files = (
 				75AABF0F1B6819F5004E545E /* iAd.framework in Frameworks */,
 				75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */,
-				75AABEED1B6684EF004E545E /* Pods_VirtualSPF.framework in Frameworks */,
-				75AABEDE1B65C27B004E545E /* Pods_VirtualSPF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +95,7 @@
 			children = (
 				75AABF0E1B6819F5004E545E /* iAd.framework */,
 				75AABF0B1B6814FA004E545E /* CoreLocation.framework */,
-				75AABEDD1B65C27B004E545E /* Pods_VirtualSPF.framework */,
 				75AABEDB1B65C264004E545E /* SwiftHTTP.framework */,
-				D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,7 +106,6 @@
 				75AABEB81B65A98B004E545E /* VirtualSPF */,
 				75FFA0171EDA702E008E8114 /* VirtualSPFTests */,
 				75AABEB71B65A98B004E545E /* Products */,
-				D44889EC5613A59A8230865A /* Pods */,
 				5E97B902FF3CAFD330991CD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -178,19 +171,12 @@
 		75FFA0171EDA702E008E8114 /* VirtualSPFTests */ = {
 			isa = PBXGroup;
 			children = (
-				75FFA0181EDA702E008E8114 /* VirtualSPFTests.swift */,
+				750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */,
+				75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */,
+				750138FD1EDAF098008FB7B9 /* infoTest.swift */,
 				75FFA01A1EDA702E008E8114 /* Info.plist */,
 			);
 			path = VirtualSPFTests;
-			sourceTree = "<group>";
-		};
-		D44889EC5613A59A8230865A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AFB4F396EB3F9F5E1746488F /* Pods-VirtualSPF.debug.xcconfig */,
-				53A792E0C3076EC91A3BB0B1 /* Pods-VirtualSPF.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,12 +186,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75AABED51B65A98B004E545E /* Build configuration list for PBXNativeTarget "VirtualSPF" */;
 			buildPhases = (
-				961075DDA0FE95F054453AC9 /* Check Pods Manifest.lock */,
 				75AABEB21B65A98B004E545E /* Sources */,
 				75AABEB31B65A98B004E545E /* Frameworks */,
 				75AABEB41B65A98B004E545E /* Resources */,
-				1E55B7F167FE1F6FA67D165F /* Embed Pods Frameworks */,
-				99B34A2CF9849A725AA7C022 /* Copy Pods Resources */,
 				75AABEEF1B6684EF004E545E /* Embed Frameworks */,
 				7555AFC71EDA58F100112C72 /* Run Swiftlint */,
 			);
@@ -299,21 +282,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E55B7F167FE1F6FA67D165F /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7555AFC71EDA58F100112C72 /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,36 +295,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		961075DDA0FE95F054453AC9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		99B34A2CF9849A725AA7C022 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -378,7 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75FFA0191EDA702E008E8114 /* VirtualSPFTests.swift in Sources */,
+				750138FE1EDAF098008FB7B9 /* infoTest.swift in Sources */,
+				750138FC1EDAF078008FB7B9 /* explainationViewTests.swift in Sources */,
+				75FFA0191EDA702E008E8114 /* mainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +445,6 @@
 		};
 		75AABED61B65A98B004E545E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFB4F396EB3F9F5E1746488F /* Pods-VirtualSPF.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -529,7 +468,6 @@
 		};
 		75AABED71B65A98B004E545E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53A792E0C3076EC91A3BB0B1 /* Pods-VirtualSPF.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -623,6 +561,7 @@
 				75FFA01E1EDA702E008E8114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

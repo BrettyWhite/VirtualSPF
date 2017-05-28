@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class mainCell: UITableViewCell {
+class MainCell: UITableViewCell {
     @IBOutlet weak var uviLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
-    
+
 }

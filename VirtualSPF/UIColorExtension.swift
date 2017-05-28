@@ -10,18 +10,18 @@ import UIKit
 
 extension UIColor {
     public convenience init(rgba: String) {
-        var red:   CGFloat = 0.0
+        var red: CGFloat = 0.0
         var green: CGFloat = 0.0
-        var blue:  CGFloat = 0.0
+        var blue: CGFloat = 0.0
         var alpha: CGFloat = 1.0
-        
+
         if rgba.hasPrefix("#") {
-            let index   = rgba.startIndex.advancedBy(1)
-            let hex     = rgba.substringFromIndex(index)
-            let scanner = NSScanner(string: hex)
+            let index   = rgba.characters.index(rgba.startIndex, offsetBy: 1)
+            let hex     = rgba.substring(from: index)
+            let scanner = Scanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
-            if scanner.scanHexLongLong(&hexValue) {
-                switch (hex.characters.count) {
+            if scanner.scanHexInt64(&hexValue) {
+                switch hex.characters.count {
                 case 3:
                     red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
                     green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0

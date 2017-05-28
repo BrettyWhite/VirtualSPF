@@ -26,6 +26,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     @IBOutlet weak var infoBtn: UIBarButtonItem?
     @IBOutlet weak var settingsBTN: UIButton?
 
+    class ViewController {
+        init () {}
+    }
+
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -112,8 +116,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
     }
     // MARK: Location Stuff
-
-    fileprivate func initLocationManager() {
+    func initLocationManager() {
 
         seenError = false
         locationFixAchieved = false

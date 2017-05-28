@@ -21,7 +21,18 @@
 		75AABF0F1B6819F5004E545E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0E1B6819F5004E545E /* iAd.framework */; };
 		75AABF121B681BE3004E545E /* explainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF111B681BE3004E545E /* explainationView.swift */; };
 		75AABF141B683182004E545E /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF131B683182004E545E /* info.swift */; };
+		75FFA0191EDA702E008E8114 /* VirtualSPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA0181EDA702E008E8114 /* VirtualSPFTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75FFA01B1EDA702E008E8114 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75AABEAE1B65A98B004E545E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75AABEB51B65A98B004E545E;
+			remoteInfo = VirtualSPF;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		75AABEEF1B6684EF004E545E /* Embed Frameworks */ = {
@@ -54,6 +65,9 @@
 		75AABF0E1B6819F5004E545E /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		75AABF111B681BE3004E545E /* explainationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainationView.swift; sourceTree = "<group>"; };
 		75AABF131B683182004E545E /* info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = info.swift; sourceTree = "<group>"; };
+		75FFA0161EDA702E008E8114 /* VirtualSPFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSPFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75FFA0181EDA702E008E8114 /* VirtualSPFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSPFTests.swift; sourceTree = "<group>"; };
+		75FFA01A1EDA702E008E8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFB4F396EB3F9F5E1746488F /* Pods-VirtualSPF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C890C1DE53A304E4A70CF8 /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSPF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +81,13 @@
 				75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */,
 				75AABEED1B6684EF004E545E /* Pods_VirtualSPF.framework in Frameworks */,
 				75AABEDE1B65C27B004E545E /* Pods_VirtualSPF.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FFA0131EDA702E008E8114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				75AABEB81B65A98B004E545E /* VirtualSPF */,
+				75FFA0171EDA702E008E8114 /* VirtualSPFTests */,
 				75AABEB71B65A98B004E545E /* Products */,
 				D44889EC5613A59A8230865A /* Pods */,
 				5E97B902FF3CAFD330991CD7 /* Frameworks */,
@@ -99,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				75AABEB61B65A98B004E545E /* VirtualSPF.app */,
+				75FFA0161EDA702E008E8114 /* VirtualSPFTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +175,15 @@
 			name = "Main Classes";
 			sourceTree = "<group>";
 		};
+		75FFA0171EDA702E008E8114 /* VirtualSPFTests */ = {
+			isa = PBXGroup;
+			children = (
+				75FFA0181EDA702E008E8114 /* VirtualSPFTests.swift */,
+				75FFA01A1EDA702E008E8114 /* Info.plist */,
+			);
+			path = VirtualSPFTests;
+			sourceTree = "<group>";
+		};
 		D44889EC5613A59A8230865A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,13 +218,31 @@
 			productReference = 75AABEB61B65A98B004E545E /* VirtualSPF.app */;
 			productType = "com.apple.product-type.application";
 		};
+		75FFA0151EDA702E008E8114 /* VirtualSPFTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75FFA01F1EDA702E008E8114 /* Build configuration list for PBXNativeTarget "VirtualSPFTests" */;
+			buildPhases = (
+				75FFA0121EDA702E008E8114 /* Sources */,
+				75FFA0131EDA702E008E8114 /* Frameworks */,
+				75FFA0141EDA702E008E8114 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75FFA01C1EDA702E008E8114 /* PBXTargetDependency */,
+			);
+			name = VirtualSPFTests;
+			productName = VirtualSPFTests;
+			productReference = 75FFA0161EDA702E008E8114 /* VirtualSPFTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		75AABEAE1B65A98B004E545E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Brett Mcisaac";
 				TargetAttributes = {
@@ -200,6 +250,12 @@
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = RZQ9YBJK4A;
 						LastSwiftMigration = 0810;
+					};
+					75FFA0151EDA702E008E8114 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = RZQ9YBJK4A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 75AABEB51B65A98B004E545E;
 					};
 				};
 			};
@@ -217,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				75AABEB51B65A98B004E545E /* VirtualSPF */,
+				75FFA0151EDA702E008E8114 /* VirtualSPFTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +286,13 @@
 				75AABEC11B65A98B004E545E /* Main.storyboard in Resources */,
 				75AABEC61B65A98B004E545E /* LaunchScreen.xib in Resources */,
 				75AABEC31B65A98B004E545E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FFA0141EDA702E008E8114 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +374,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75FFA0121EDA702E008E8114 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75FFA0191EDA702E008E8114 /* VirtualSPFTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		75FFA01C1EDA702E008E8114 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75AABEB51B65A98B004E545E /* VirtualSPF */;
+			targetProxy = 75FFA01B1EDA702E008E8114 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		75AABEBF1B65A98B004E545E /* Main.storyboard */ = {
@@ -471,6 +551,46 @@
 			};
 			name = Release;
 		};
+		75FFA01D1EDA702E008E8114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RZQ9YBJK4A;
+				INFOPLIST_FILE = VirtualSPFTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = buhz.brett.VirtualSPFTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtualSPF.app/VirtualSPF";
+			};
+			name = Debug;
+		};
+		75FFA01E1EDA702E008E8114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = RZQ9YBJK4A;
+				INFOPLIST_FILE = VirtualSPFTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = buhz.brett.VirtualSPFTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtualSPF.app/VirtualSPF";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,6 +611,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		75FFA01F1EDA702E008E8114 /* Build configuration list for PBXNativeTarget "VirtualSPFTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75FFA01D1EDA702E008E8114 /* Debug */,
+				75FFA01E1EDA702E008E8114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

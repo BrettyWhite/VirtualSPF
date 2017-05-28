@@ -19,6 +19,10 @@ class ExplainationView: UIViewController {
     @IBOutlet weak var descLabel: UILabel?
     @IBOutlet weak var expLabel: UILabel?
 
+    class ExplainationView {
+        init () {}
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -33,7 +37,7 @@ class ExplainationView: UIViewController {
         self.setScreenSize()
     }
 
-    fileprivate func setScreenSize() {
+    func setScreenSize() {
 
         // play with adjusting sizing on different screens
         let screenSize: CGRect = UIScreen.main.bounds
@@ -51,7 +55,7 @@ class ExplainationView: UIViewController {
     
         Information gathered from http://www2.epa.gov/sunwise/uv-index-scale
     */
-    fileprivate func initView() {
+    func initView() {
 
         let uvint: Int = Int(UVValue)!
 

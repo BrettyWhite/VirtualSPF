@@ -6,7 +6,10 @@
 //  Copyright © 2017 Brett Mcisaac. All rights reserved.
 //
 
+import Nimble
+import Quick
 import XCTest
+
 @testable import VirtualSPF
 
 class InfoTest: XCTestCase {
@@ -21,6 +24,7 @@ class InfoTest: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        info = nil
         super.tearDown()
     }
 

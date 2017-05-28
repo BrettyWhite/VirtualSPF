@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474387362637CE692A4DA7B6 /* Pods_VirtualSPFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C80993FD9214AA9FF8721D5 /* Pods_VirtualSPFTests.framework */; };
 		750138FC1EDAF078008FB7B9 /* explainationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */; };
 		750138FE1EDAF098008FB7B9 /* infoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750138FD1EDAF098008FB7B9 /* infoTest.swift */; };
 		75AABEBC1B65A98B004E545E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEBB1B65A98B004E545E /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 		75AABF121B681BE3004E545E /* explainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF111B681BE3004E545E /* explainationView.swift */; };
 		75AABF141B683182004E545E /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF131B683182004E545E /* info.swift */; };
 		75FFA0191EDA702E008E8114 /* mainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */; };
+		EA9EC64A02ED988EA3883746 /* Pods_VirtualSPF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E577BDBB5FFD82FE218F465 /* Pods_VirtualSPF.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		35731168A6B979C593462EDA /* Pods-VirtualSPF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF.debug.xcconfig"; sourceTree = "<group>"; };
 		750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainationViewTests.swift; sourceTree = "<group>"; };
 		750138FD1EDAF098008FB7B9 /* infoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoTest.swift; sourceTree = "<group>"; };
 		75AABEB61B65A98B004E545E /* VirtualSPF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSPF.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +71,11 @@
 		75FFA0161EDA702E008E8114 /* VirtualSPFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSPFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewControllerTests.swift; sourceTree = "<group>"; };
 		75FFA01A1EDA702E008E8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E577BDBB5FFD82FE218F465 /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSPF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D9D14418DBED009F0A10B6C /* Pods-VirtualSPFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C54844C95474E9FFFD77573 /* Pods-VirtualSPFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C80993FD9214AA9FF8721D5 /* Pods_VirtualSPFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSPFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5447F8761D6943C5372B758 /* Pods-VirtualSPF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPF.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			files = (
 				75AABF0F1B6819F5004E545E /* iAd.framework in Frameworks */,
 				75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */,
+				EA9EC64A02ED988EA3883746 /* Pods_VirtualSPF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,18 +93,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474387362637CE692A4DA7B6 /* Pods_VirtualSPFTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B4F1D8C7EB12B5690B9C7E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35731168A6B979C593462EDA /* Pods-VirtualSPF.debug.xcconfig */,
+				B5447F8761D6943C5372B758 /* Pods-VirtualSPF.release.xcconfig */,
+				9C54844C95474E9FFFD77573 /* Pods-VirtualSPFTests.debug.xcconfig */,
+				8D9D14418DBED009F0A10B6C /* Pods-VirtualSPFTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5E97B902FF3CAFD330991CD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				75AABF0E1B6819F5004E545E /* iAd.framework */,
 				75AABF0B1B6814FA004E545E /* CoreLocation.framework */,
 				75AABEDB1B65C264004E545E /* SwiftHTTP.framework */,
+				7E577BDBB5FFD82FE218F465 /* Pods_VirtualSPF.framework */,
+				9C80993FD9214AA9FF8721D5 /* Pods_VirtualSPFTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +130,7 @@
 				75FFA0171EDA702E008E8114 /* VirtualSPFTests */,
 				75AABEB71B65A98B004E545E /* Products */,
 				5E97B902FF3CAFD330991CD7 /* Frameworks */,
+				0B4F1D8C7EB12B5690B9C7E5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,11 +210,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75AABED51B65A98B004E545E /* Build configuration list for PBXNativeTarget "VirtualSPF" */;
 			buildPhases = (
+				1E07C4D17B99A93044F782CF /* [CP] Check Pods Manifest.lock */,
 				75AABEB21B65A98B004E545E /* Sources */,
 				75AABEB31B65A98B004E545E /* Frameworks */,
 				75AABEB41B65A98B004E545E /* Resources */,
 				75AABEEF1B6684EF004E545E /* Embed Frameworks */,
 				7555AFC71EDA58F100112C72 /* Run Swiftlint */,
+				90D33179A4B39305F83E8871 /* [CP] Embed Pods Frameworks */,
+				234740CB7178A42104C3C001 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75FFA01F1EDA702E008E8114 /* Build configuration list for PBXNativeTarget "VirtualSPFTests" */;
 			buildPhases = (
+				44CB7C0DD35183D5869CEC07 /* [CP] Check Pods Manifest.lock */,
 				75FFA0121EDA702E008E8114 /* Sources */,
 				75FFA0131EDA702E008E8114 /* Frameworks */,
 				75FFA0141EDA702E008E8114 /* Resources */,
+				30B511517875CBA69F43E74A /* [CP] Embed Pods Frameworks */,
+				3495ACDBECC5F83FC293FACA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +312,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E07C4D17B99A93044F782CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		234740CB7178A42104C3C001 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30B511517875CBA69F43E74A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3495ACDBECC5F83FC293FACA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44CB7C0DD35183D5869CEC07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		7555AFC71EDA58F100112C72 /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +400,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		90D33179A4B39305F83E8871 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -445,6 +565,7 @@
 		};
 		75AABED61B65A98B004E545E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35731168A6B979C593462EDA /* Pods-VirtualSPF.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -468,6 +589,7 @@
 		};
 		75AABED71B65A98B004E545E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5447F8761D6943C5372B758 /* Pods-VirtualSPF.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -491,6 +613,7 @@
 		};
 		75FFA01D1EDA702E008E8114 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C54844C95474E9FFFD77573 /* Pods-VirtualSPFTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -514,6 +637,7 @@
 		};
 		75FFA01E1EDA702E008E8114 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D9D14418DBED009F0A10B6C /* Pods-VirtualSPFTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

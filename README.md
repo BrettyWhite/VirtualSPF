@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/brettywhite/VirtualSPF.svg?branch=master)](https://travis-ci.org/brettywhite/VirtualSPF)
+# Virtual SPF [![Build Status](https://travis-ci.org/brettywhite/VirtualSPF.svg?branch=master)](https://travis-ci.org/brettywhite/VirtualSPF)  [![CC 4.0][license-image]][license-url]
 
 ## Overview
 
@@ -32,8 +32,5 @@ If you are not familiar with CocoaPods yet, after running that command you will 
 
 As I did this as a first Swift Project, there may be things that could be done better than they are. I will try to update when possible and respond to any issues. 
 
-## License
-
-This work is free. You can redistribute it and/or modify it under the
-terms of the Do What The Fuck You Want To Public License, Version 2,
-as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
+[license-url]: http://www.wtfpl.net
+[license-image]: https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square

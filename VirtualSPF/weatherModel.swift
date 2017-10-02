@@ -1,0 +1,46 @@
+//
+//  weatherModel.swift
+//  VirtualSPF
+//
+//  Created by Bretty White on 10/2/17.
+//  Copyright © 2017 Brett Mcisaac. All rights reserved.
+//
+
+import CoreLocation
+import UIKit
+
+import Alamofire
+import SwiftyJSON
+
+enum NetworkState {
+    case finished
+    case searching
+}
+var delegate: WeatherDelegate?
+
+protocol WeatherDelegate: class {
+    func didChangeProxyState(_ newState: NetworkState, data: JSON)
+}
+
+class WeatherModel {
+    // MARK: Networking
+    class func getWeather(_ coordinates: CLLocation) {
+        print("GETTING WEATHER MODEL CALL")
+        let data: JSON = JSON.null
+        delegate?.didChangeProxyState(NetworkState.searching, data: data)
+        // Build URL with coords from zip
+        let coord = coordinates.coordinate
+        // If this line is erroring out, see sampleEnvVars.swift to see what you need to do
+        let apiKey = VSPFProtectedConstants.DarkSkyKey
+        let weatherEndpoint: String = "https://api.darksky.net/forecast/\(apiKey)/\(coord.latitude),\(coord.longitude)?exclude=minutely,flags,daily"
+
+        Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
+
+            if let data = response.data {
+                let jsondata = JSON(data:data as Data)
+                let weather = jsondata
+                delegate?.didChangeProxyState(NetworkState.finished, data: weather)
+            }
+        }
+    }
+}

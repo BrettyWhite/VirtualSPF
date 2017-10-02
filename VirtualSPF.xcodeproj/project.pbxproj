@@ -27,6 +27,8 @@
 		8B43B39E1F829B8200E1B7FE /* timeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B39D1F829B8200E1B7FE /* timeConverter.swift */; };
 		8B43B3A01F82A90200E1B7FE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B39F1F82A90200E1B7FE /* BaseViewController.swift */; };
 		8B43B3A21F82A96800E1B7FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B3A11F82A96800E1B7FE /* Constants.swift */; };
+		8B43B3A41F82CBBA00E1B7FE /* sampleEnvVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B3A31F82CBBA00E1B7FE /* sampleEnvVars.swift */; };
+		8B43B3A61F82CD7B00E1B7FE /* weatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B3A51F82CD7B00E1B7FE /* weatherModel.swift */; };
 		EA9EC64A02ED988EA3883746 /* Pods_VirtualSPF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E577BDBB5FFD82FE218F465 /* Pods_VirtualSPF.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		8B43B39D1F829B8200E1B7FE /* timeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConverter.swift; sourceTree = "<group>"; };
 		8B43B39F1F82A90200E1B7FE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8B43B3A11F82A96800E1B7FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B43B3A31F82CBBA00E1B7FE /* sampleEnvVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleEnvVars.swift; sourceTree = "<group>"; };
+		8B43B3A51F82CD7B00E1B7FE /* weatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherModel.swift; sourceTree = "<group>"; };
 		8D9D14418DBED009F0A10B6C /* Pods-VirtualSPFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C54844C95474E9FFFD77573 /* Pods-VirtualSPFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C80993FD9214AA9FF8721D5 /* Pods_VirtualSPFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSPFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				8B43B39B1F8299F700E1B7FE /* envVars.swift */,
+				8B43B3A31F82CBBA00E1B7FE /* sampleEnvVars.swift */,
 				75AABEBA1B65A98B004E545E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				8B43B39D1F829B8200E1B7FE /* timeConverter.swift */,
+				8B43B3A51F82CD7B00E1B7FE /* weatherModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -469,8 +475,10 @@
 				75AABF081B67DD0F004E545E /* MainCell.swift in Sources */,
 				8B43B3A21F82A96800E1B7FE /* Constants.swift in Sources */,
 				8B43B3A01F82A90200E1B7FE /* BaseViewController.swift in Sources */,
+				8B43B3A41F82CBBA00E1B7FE /* sampleEnvVars.swift in Sources */,
 				8B43B39E1F829B8200E1B7FE /* timeConverter.swift in Sources */,
 				75AABF141B683182004E545E /* info.swift in Sources */,
+				8B43B3A61F82CD7B00E1B7FE /* weatherModel.swift in Sources */,
 				75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

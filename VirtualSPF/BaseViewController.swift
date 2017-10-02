@@ -3,7 +3,7 @@
 //  VirtualSPF
 //
 //  Created by Bretty White on 10/2/17.
-//  Copyright © 2017 Brett Mcisaac. All rights reserved.
+//  Copyright © 2017 Bretty White. All rights reserved.
 //
 
 import UIKit

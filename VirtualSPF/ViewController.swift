@@ -12,7 +12,7 @@ import SwiftyJSON
 import CoreLocation
 import MBProgressHUD
 
-class ViewController: BaseViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var locationManager: CLLocationManager!
     var seenError: Bool = false
@@ -20,6 +20,7 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
     var locationStatus: NSString = "Not Started"
     var weatherArray: JSON = [:]
     var cell: MainCell?
+    var state: NetworkState = .finished
 
     //outlets
     @IBOutlet var tableView: UITableView!
@@ -31,38 +32,14 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
     }
 
     override func viewDidLoad() {
-
         super.viewDidLoad()
+        delegate = self
         initLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: Networking
-    fileprivate func getWeather(_ coordinates: CLLocation) {
-
-        // Build URL with coords from zip
-
-        let coord = coordinates.coordinate
-        let apiKey = VSPFProtectedConstants.DarkSkyKey
-        let weatherEndpoint: String = "https://api.darksky.net/forecast/\(apiKey)/\(coord.latitude),\(coord.longitude)?exclude=minutely,flags,daily"
-
-        Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
-
-                if let data = response.data {
-
-                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-
-                    let jsondata = JSON(data:data as Data)
-                    let weather = jsondata
-                    self.iterateResponse(weather)
-                } else {
-                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-            }
-        }
     }
 
     // MARK: Response Handeling
@@ -90,7 +67,6 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
         self.cell!.timeLabel.text = TimeConverter.convertTime(unixtime: cellTime)
 
         let uvint: Int = Int(cellUVI)!
-
         var strokeColor: UIColor
         strokeColor = UIColor(cgColor: UIColor(rgba: "#fff").cgColor)
 
@@ -107,14 +83,11 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
         }
 
         cell!.backgroundColor = strokeColor
-
         return cell!
     }
 
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         //println("You selected cell #\(indexPath.row)!")
-
     }
     // MARK: Location Stuff
     func initLocationManager() {
@@ -144,7 +117,6 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
             let openAction = UIAlertAction(title: "Open Settings", style: .default) { (_) in
                 if let url = URL(string:UIApplicationOpenSettingsURLString) {
                     UIApplication.shared.open(url)
-
                 }
             }
             alertController.addAction(openAction)
@@ -172,7 +144,7 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
 
             locationManager.stopUpdatingLocation()
             let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
-            self.getWeather(location)
+            WeatherModel.getWeather(location)
             }
     }
 
@@ -215,7 +187,6 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
     }
 
     // MARK: other stuff
-
     @IBAction func openSettings(_ sender: UIButton) {
         let alertController = UIAlertController(
             title: "Location Access Disabled",
@@ -242,6 +213,28 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
             let cellUVI: String = "\(uvi)"
             let explainationViewController = (segue.destination as! ExplainationView)
             explainationViewController.UVValue = cellUVI
+        }
+    }
+
+    func displayHUD() {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.labelText = "Finding The Sun"
+    }
+
+    func hideHUD() {
+        MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+    }
+
+    // MARK: - Delegate Functions
+    func didChangeProxyState(_ newState: NetworkState, data: JSON) {
+        state = newState
+
+        switch newState {
+        case .searching:
+            displayHUD()
+        case .finished:
+            hideHUD()
+            iterateResponse(data)
         }
     }
 }

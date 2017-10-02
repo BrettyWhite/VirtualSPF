@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import MBProgressHUD
 
-class ExplainationView: UIViewController {
+class ExplainationView: BaseViewController {
 
     var UVValue: String!
 
@@ -30,9 +30,6 @@ class ExplainationView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.title = "Virtual SPF - Information"
-        self.navigationController!.navigationBar.barTintColor = UIColor.yellow
         self.initView()
         self.setScreenSize()
     }

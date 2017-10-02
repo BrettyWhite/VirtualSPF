@@ -12,7 +12,7 @@ import SwiftyJSON
 import CoreLocation
 import MBProgressHUD
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var locationManager: CLLocationManager!
     var seenError: Bool = false
@@ -33,7 +33,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        self.navigationController!.navigationBar.barTintColor = UIColor.yellow
         initLocationManager()
     }
 
@@ -43,10 +42,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
 
     // MARK: Networking
-    fileprivate func getWeather(_ zip: NSString) {
+    fileprivate func getWeather(_ coordinates: CLLocation) {
 
         // Build URL with coords from zip
-        let weatherEndpoint: String = "http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/\(zip)/JSON"
+
+        let coord = coordinates.coordinate
+        let apiKey = VSPFProtectedConstants.DarkSkyKey
+        let weatherEndpoint: String = "https://api.darksky.net/forecast/\(apiKey)/\(coord.latitude),\(coord.longitude)?exclude=minutely,flags,daily"
 
         Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
 
@@ -62,14 +64,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             }
         }
     }
+
     // MARK: Response Handeling
-
     fileprivate func iterateResponse(_ data: JSON) {
-
-        weatherArray = data
-
+        weatherArray = data["hourly"]["data"]
         tableView.reloadData()
     }
+
     // MARK: Table Stuff
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.weatherArray.count
@@ -79,14 +80,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
         cell = tableView.dequeueReusableCell(withIdentifier: "mainCellID", for: indexPath) as? MainCell
 
-        let uvi = weatherArray[indexPath.row]["UV_VALUE"]
-        let hour = weatherArray[indexPath.row]["DATE_TIME"]
+        let uvi = weatherArray[indexPath.row]["uvIndex"]
+        let hour = weatherArray[indexPath.row]["time"]
         let cellTime: String = "\(hour)"
         let cellUVI: String = "\(uvi)"
 
         self.cell!.selectionStyle = UITableViewCellSelectionStyle.none
         self.cell!.uviLabel.text = cellUVI
-        self.cell!.timeLabel.text = cellTime
+        self.cell!.timeLabel.text = TimeConverter.convertTime(unixtime: cellTime)
 
         let uvint: Int = Int(cellUVI)!
 
@@ -164,7 +165,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         if locationFixAchieved == false {
 
             settingsBTN?.isHidden = true
-
             locationFixAchieved = true
 
             let locationArray = locations as NSArray
@@ -172,25 +172,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             let coord = locationObj.coordinate
 
             locationManager.stopUpdatingLocation()
-
-            let geoCoder = CLGeocoder()
             let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
-
-            geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
-                let placeArray = placemarks as [CLPlacemark]!
-
-                var placeMark: CLPlacemark!
-                placeMark = placeArray?[0]
-
-                if let city = placeMark.addressDictionary?["City"] as? NSString {
-                    self.navigationItem.title = "UV Index - \(city)"
-                }
-
-                if let zip = placeMark.addressDictionary?["ZIP"] as? NSString {
-                    self.getWeather(zip)
-                }
-            })
-        }
+            self.getWeather(location)
+            }
     }
 
     internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -256,7 +240,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
         if segue.identifier == "explainSegue" {
             let row = self.tableView.indexPathForSelectedRow!.row
-            let uvi = weatherArray[row]["UV_VALUE"]
+            let uvi = weatherArray[row]["uvIndex"]
             let cellUVI: String = "\(uvi)"
             let explainationViewController = (segue.destination as! ExplainationView)
             explainationViewController.UVValue = cellUVI

@@ -23,12 +23,13 @@ protocol WeatherDelegate: class {
 }
 
 class WeatherModel {
-    // MARK: Networking
+    /// Model function for getting the weather data
+    ///
+    /// - Parameter coordinates: Send over CLLocation obtained from device's GPS
     class func getWeather(_ coordinates: CLLocation) {
-        print("GETTING WEATHER MODEL CALL")
+
         let data: JSON = JSON.null
         delegate?.didChangeProxyState(NetworkState.searching, data: data)
-        // Build URL with coords from zip
         let coord = coordinates.coordinate
         // If this line is erroring out, see sampleEnvVars.swift to see what you need to do
         let apiKey = VSPFProtectedConstants.DarkSkyKey

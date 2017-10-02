@@ -13,7 +13,6 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isTranslucent = false
-
         self.navigationController?.navigationBar.barTintColor = UIColor(cgColor: UIColor(rgba: "#ffff66").cgColor)
         self.title = VSPFConstants.Name
     }

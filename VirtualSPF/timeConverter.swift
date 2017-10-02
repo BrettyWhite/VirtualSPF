@@ -9,14 +9,20 @@
 import Foundation
 
 class TimeConverter {
-
+    /// Converts time from Unix time to Human readable
+    ///
+    /// - Parameter unixtime: time in unix format
+    /// - Returns: a human readable string
     class func convertTime(unixtime: String) -> String? {
         let unixtimeDouble = Double(unixtime)
         let date = Date(timeIntervalSince1970: unixtimeDouble!)
         let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "EST") //Set timezone that you want
+        //Set time zone
+        //TODO: make this based on local time
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST")
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+        //Specify your format that you want
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let strDate = dateFormatter.string(from: date)
         return strDate
     }

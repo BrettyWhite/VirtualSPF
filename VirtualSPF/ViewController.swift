@@ -258,8 +258,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             let row = self.tableView.indexPathForSelectedRow!.row
             let uvi = weatherArray[row]["UV_VALUE"]
             let cellUVI: String = "\(uvi)"
-            let yourNextViewController = (segue.destination as! ExplainationView)
-            yourNextViewController.UVValue = cellUVI
+            let explainationViewController = (segue.destination as! ExplainationView)
+            explainationViewController.UVValue = cellUVI
         }
     }
 }

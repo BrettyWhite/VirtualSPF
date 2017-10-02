@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APt-At-ljP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APt-At-ljP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -221,7 +221,7 @@ Enjoy!</string>
         <!--Explaination View-->
         <scene sceneID="u4k-sk-mKd">
             <objects>
-                <viewController storyboardIdentifier="explainationViewC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X5e-a2-h0X" customClass="explainationView" customModule="VirtualSPF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="explainationViewC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X5e-a2-h0X" customClass="ExplainationView" customModule="VirtualSPF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fvK-s5-caY"/>
                         <viewControllerLayoutGuide type="bottom" id="bW8-v6-Yqb"/>
@@ -314,7 +314,7 @@ Enjoy!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yB-rL-pCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="732"/>
+            <point key="canvasLocation" x="2153" y="735"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zzx-fz-32b">
@@ -322,7 +322,7 @@ Enjoy!</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="APt-At-ljP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="17t-j3-1wj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

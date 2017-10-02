@@ -2,7 +2,7 @@
 
 ## Overview
 
-Uses Swift 3
+Uses Swift 4 (working on Xcode 9)
 
 I created this project as a way to 1. play with Swift and 2. I wanted to build it for my own use. vSPF uses Dark Sky's API and GPS to display the UV Index for the day, and gives a brief explaination of things to do to help mitigate UV exposure. Dark Sky lets you have 1000 calls a day for free [Dark Sky API](https://darksky.net/dev)
 

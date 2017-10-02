@@ -151,6 +151,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By Dark Sky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rg8-j6-biI">
+                                <rect key="frame" x="16" y="608" width="343" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -160,6 +166,9 @@
                             <constraint firstItem="bad-Gs-rEA" firstAttribute="leading" secondItem="4w4-oQ-mw8" secondAttribute="leadingMargin" constant="17" id="DcS-4W-2aO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bad-Gs-rEA" secondAttribute="trailing" constant="17" id="G5S-qa-EGz"/>
                             <constraint firstItem="bad-Gs-rEA" firstAttribute="top" secondItem="0Xs-uO-TCl" secondAttribute="bottom" constant="25" id="HAe-uy-hn1"/>
+                            <constraint firstItem="Mhm-Sk-VdM" firstAttribute="top" secondItem="Rg8-j6-biI" secondAttribute="bottom" constant="8" id="NKM-k6-xya"/>
+                            <constraint firstItem="Rg8-j6-biI" firstAttribute="trailing" secondItem="4w4-oQ-mw8" secondAttribute="trailingMargin" id="jhh-Mn-h0D"/>
+                            <constraint firstItem="Rg8-j6-biI" firstAttribute="leading" secondItem="4w4-oQ-mw8" secondAttribute="leadingMargin" id="yJC-a4-vb0"/>
                         </constraints>
                     </view>
                     <connections>

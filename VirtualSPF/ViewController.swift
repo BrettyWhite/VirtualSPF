@@ -156,7 +156,6 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
 
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud?.labelText = "Finding The Sun"
-
     }
 
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -182,7 +181,6 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
         locationManager.stopUpdatingLocation()
         MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
         print("Error with location manager")
-
     }
 
     internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -190,7 +188,7 @@ class ViewController: BaseViewController, CLLocationManagerDelegate, UITableView
         switch CLLocationManager.authorizationStatus() {
 
         case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse:
             locationManager.startUpdatingLocation()
         case  .restricted, .denied:

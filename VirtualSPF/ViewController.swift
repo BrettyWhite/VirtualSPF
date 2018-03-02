@@ -235,6 +235,8 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
         case .finished:
             hideHUD()
             iterateResponse(data)
+        case .error:
+            hideHUD()
         }
     }
 }

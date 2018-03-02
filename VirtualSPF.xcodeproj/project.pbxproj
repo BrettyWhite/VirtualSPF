@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07FFCF1E204A181100885B3E /* envVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFCF1D204A181100885B3E /* envVars.swift */; };
 		474387362637CE692A4DA7B6 /* Pods_VirtualSPFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C80993FD9214AA9FF8721D5 /* Pods_VirtualSPFTests.framework */; };
 		750138FC1EDAF078008FB7B9 /* explainationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */; };
 		750138FE1EDAF098008FB7B9 /* infoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750138FD1EDAF098008FB7B9 /* infoTest.swift */; };
@@ -15,7 +16,7 @@
 		75AABEC11B65A98B004E545E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEBF1B65A98B004E545E /* Main.storyboard */; };
 		75AABEC31B65A98B004E545E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEC21B65A98B004E545E /* Images.xcassets */; };
 		75AABEC61B65A98B004E545E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEC41B65A98B004E545E /* LaunchScreen.xib */; };
-		75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75AABEEE1B6684EF004E545E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEF01B66A0C8004E545E /* UIColorExtension.swift */; };
 		75AABF081B67DD0F004E545E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* MainCell.swift */; };
 		75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0B1B6814FA004E545E /* CoreLocation.framework */; };
@@ -23,7 +24,6 @@
 		75AABF141B683182004E545E /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF131B683182004E545E /* info.swift */; };
 		75FFA0191EDA702E008E8114 /* mainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */; };
 		8B43B3961F8287CE00E1B7FE /* explainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF111B681BE3004E545E /* explainationView.swift */; };
-		8B43B39C1F8299F700E1B7FE /* envVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B39B1F8299F700E1B7FE /* envVars.swift */; };
 		8B43B39E1F829B8200E1B7FE /* timeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B39D1F829B8200E1B7FE /* timeConverter.swift */; };
 		8B43B3A01F82A90200E1B7FE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B39F1F82A90200E1B7FE /* BaseViewController.swift */; };
 		8B43B3A21F82A96800E1B7FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B3A11F82A96800E1B7FE /* Constants.swift */; };
@@ -49,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */,
+				75AABEEE1B6684EF004E545E /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07FFCF1D204A181100885B3E /* envVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = envVars.swift; sourceTree = "<group>"; };
 		35731168A6B979C593462EDA /* Pods-VirtualSPF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSPF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF.debug.xcconfig"; sourceTree = "<group>"; };
 		750138FB1EDAF078008FB7B9 /* explainationViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainationViewTests.swift; sourceTree = "<group>"; };
 		750138FD1EDAF098008FB7B9 /* infoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoTest.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		75FFA0181EDA702E008E8114 /* mainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewControllerTests.swift; sourceTree = "<group>"; };
 		75FFA01A1EDA702E008E8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E577BDBB5FFD82FE218F465 /* Pods_VirtualSPF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSPF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B43B39B1F8299F700E1B7FE /* envVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = envVars.swift; sourceTree = "<group>"; };
 		8B43B39D1F829B8200E1B7FE /* timeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConverter.swift; sourceTree = "<group>"; };
 		8B43B39F1F82A90200E1B7FE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8B43B3A11F82A96800E1B7FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		75AABEB91B65A98B004E545E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8B43B39B1F8299F700E1B7FE /* envVars.swift */,
+				07FFCF1D204A181100885B3E /* envVars.swift */,
 				8B43B3A31F82CBBA00E1B7FE /* sampleEnvVars.swift */,
 				75AABEBA1B65A98B004E545E /* Info.plist */,
 			);
@@ -354,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		234740CB7178A42104C3C001 /* [CP] Copy Pods Resources */ = {
@@ -422,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7555AFC71EDA58F100112C72 /* Run Swiftlint */ = {
@@ -469,7 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B43B3961F8287CE00E1B7FE /* explainationView.swift in Sources */,
-				8B43B39C1F8299F700E1B7FE /* envVars.swift in Sources */,
+				07FFCF1E204A181100885B3E /* envVars.swift in Sources */,
 				75AABEBE1B65A98B004E545E /* ViewController.swift in Sources */,
 				75AABEBC1B65A98B004E545E /* AppDelegate.swift in Sources */,
 				75AABF081B67DD0F004E545E /* MainCell.swift in Sources */,

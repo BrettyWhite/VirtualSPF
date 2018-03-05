@@ -182,6 +182,19 @@ extension ViewController {
 
             locationManager.stopUpdatingLocation()
             let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
+            let geoCoder = CLGeocoder()
+
+            geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
+                let placeArray = placemarks as [CLPlacemark]!
+
+                var placeMark: CLPlacemark!
+                placeMark = placeArray?[0]
+
+                if let city = placeMark.addressDictionary?["City"] as? NSString {
+                    self.navigationItem.title = "VirtualSPF- \(city)"
+                }
+            })
+
             WeatherModel.getWeather(location)
         }
     }

@@ -16,4 +16,5 @@ struct VSPFConstants {
     static let OpenSettings = "Open Settings"
     static let FindingSun = "Finding The Sun"
     static let NotStarted = "Not Started"
+    static let InfoText = "vSPF was made out of necessity to assist me in choosing the best times to go outside to exercise. \n\nI figured other people might it useful as well, so I put it on the App Store. \n\nIt is not meant to replace or be used as medical advice. Please see your doctor for information specific to you. Use at your own risk. \n\nLocation is only used to access weather information from the Dark Sky's API. Location is only used to grab the UV Index. \n\nEnjoy!"
 }

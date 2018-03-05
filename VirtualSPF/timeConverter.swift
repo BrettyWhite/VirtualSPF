@@ -22,8 +22,11 @@ class TimeConverter {
         dateFormatter.timeZone = TimeZone(abbreviation: "EST")
         dateFormatter.locale = NSLocale.current
         //Specify your format that you want
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "MM-dd HH:mm"
         let strDate = dateFormatter.string(from: date)
-        return strDate
+        let time = strDate.suffix(6)
+        let dateCut = strDate.prefix(5)
+        let timeString = "Day: \(dateCut) @\(time)"
+        return timeString
     }
 }

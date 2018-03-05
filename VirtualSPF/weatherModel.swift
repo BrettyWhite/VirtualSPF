@@ -17,10 +17,10 @@ enum NetworkState {
     case searching
     case error
 }
-var delegate: WeatherDelegate?
+weak var delegate: WeatherDelegate!
 
 protocol WeatherDelegate: class {
-    func didChangeProxyState(_ newState: NetworkState, data: JSON)
+    func didChangeState(_ newState: NetworkState, data: JSON)
 }
 
 class WeatherModel {
@@ -30,21 +30,21 @@ class WeatherModel {
     class func getWeather(_ coordinates: CLLocation) {
 
         let data: JSON = JSON.null
-        delegate?.didChangeProxyState(NetworkState.searching, data: data)
+        delegate?.didChangeState(NetworkState.searching, data: data)
         let coord = coordinates.coordinate
         // If this line is erroring out, see sampleEnvVars.swift to see what you need to do
         let apiKey = VSPFProtectedConstants.DarkSkyKey
         let weatherEndpoint: String = "https://api.darksky.net/forecast/\(apiKey)/\(coord.latitude),\(coord.longitude)?exclude=minutely,flags,daily"
 
         Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
-            if ((response.error) != nil) {
-                delegate?.didChangeProxyState(NetworkState.error, data: JSON.null)
+            if (response.error) != nil {
+                delegate?.didChangeState(NetworkState.error, data: JSON.null)
                 return
             }
             if let data = response.data {
                 let jsondata = JSON(data:data as Data)
                 let weather = jsondata
-                delegate?.didChangeProxyState(NetworkState.finished, data: weather)
+                delegate?.didChangeState(NetworkState.finished, data: weather)
             }
         }
     }

@@ -12,6 +12,7 @@ target 'VirtualSPF' do
 pod 'Alamofire'
 pod 'SwiftyJSON', '~> 3.1.4'
 pod 'MBProgressHUD', '~> 0.8'
+pod 'LMGaugeView'
 
 end
 

@@ -1,0 +1,6 @@
+framework module LMGaugeView {
+  umbrella header "LMGaugeView-umbrella.h"
+
+  export *
+  module * { export * }
+}

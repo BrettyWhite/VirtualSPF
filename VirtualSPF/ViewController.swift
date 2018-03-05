@@ -59,7 +59,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
 
         let uvi = weatherArray[indexPath.row]["uvIndex"]
         let hour = weatherArray[indexPath.row]["time"]
-        let cellTime: String = "\(hour)"
+        var cellTime: String = "\(hour)"
         let cellUVI: String = "\(uvi)"
 
         self.cell!.selectionStyle = UITableViewCellSelectionStyle.none
@@ -111,7 +111,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
     }
 
     // MARK: - Delegate Functions
-    func didChangeProxyState(_ newState: NetworkState, data: JSON) {
+    func didChangeState(_ newState: NetworkState, data: JSON) {
         state = newState
 
         switch newState {

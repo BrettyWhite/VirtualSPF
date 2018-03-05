@@ -17,7 +17,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
     var locationManager: CLLocationManager!
     var seenError: Bool = false
     var locationFixAchieved: Bool = false
-    var locationStatus: NSString = "Not Started"
+    var locationStatus: NSString = VSPFConstants.NotStarted as NSString
     var weatherArray: JSON = [:]
     var cell: MainCell?
     var state: NetworkState = .finished
@@ -68,18 +68,18 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
 
         let uvint: Int = Int(cellUVI)!
         var strokeColor: UIColor
-        strokeColor = UIColor(cgColor: UIColor(rgba: "#fff").cgColor)
+        strokeColor = Colors.White
 
         if uvint >= 11 {
-            strokeColor = UIColor(cgColor: UIColor(rgba: "#ff0000").cgColor)
+            strokeColor = Colors.Red
         } else if uvint >= 8 {
-            strokeColor = UIColor(cgColor: UIColor(rgba: "#ff9900").cgColor)
+            strokeColor = Colors.Orange
         } else if uvint >= 6 {
-            strokeColor = UIColor(cgColor: UIColor(rgba: "#ffcc00").cgColor)
+            strokeColor = Colors.Yellow
         } else if uvint >= 3 {
-            strokeColor = UIColor(cgColor: UIColor(rgba: "#ffff66").cgColor)
+            strokeColor = Colors.LightYellow
         } else if uvint >= 0 {
-            strokeColor = UIColor(cgColor: UIColor(rgba: "#1cd61c").cgColor)
+            strokeColor = Colors.Green
         }
 
         cell!.backgroundColor = strokeColor
@@ -107,14 +107,14 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
             settingsBTN?.isHidden = false
 
             let alertController = UIAlertController(
-                title: "Location Access Disabled",
-                message: "In order to get UV Index data for you, you need to enable location access, but for only when you use the app. We never access location when the app is not in use.",
+                title: VSPFConstants.LocationDisabled,
+                message: VSPFConstants.LocationMessage,
                 preferredStyle: .alert)
 
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: VSPFConstants.Cancel, style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
 
-            let openAction = UIAlertAction(title: "Open Settings", style: .default) { (_) in
+            let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
                 if let url = URL(string:UIApplicationOpenSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
@@ -127,7 +127,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
         locationManager.startUpdatingLocation()
 
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud?.labelText = "Finding The Sun"
+        hud?.labelText = VSPFConstants.FindingSun
     }
 
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -167,13 +167,13 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
             settingsBTN?.isHidden = false
             //if denied, show alert why it wont work without permission
             let alertController = UIAlertController(
-                title: "Location Access Disabled",
-                message: "In order to get UV Index data for you, you need to enable location access, but for only when you use the app. We never access location when the app is not in use.",
+                title: VSPFConstants.LocationDisabled,
+                message: VSPFConstants.LocationMessage,
                 preferredStyle: .alert)
 
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: VSPFConstants.Cancel, style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
-            let openAction = UIAlertAction(title: "Open Settings", style: .default) { (_) in
+            let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
                 if let url = URL(string:UIApplicationOpenSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
@@ -189,14 +189,14 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
     // MARK: other stuff
     @IBAction func openSettings(_ sender: UIButton) {
         let alertController = UIAlertController(
-            title: "Location Access Disabled",
-            message: "In order to get UV Index data for you, you need to enable location access, but for only when you use the app. We never access location when the app is not in use.",
+            title: VSPFConstants.LocationDisabled,
+            message: VSPFConstants.LocationMessage,
             preferredStyle: .alert)
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: VSPFConstants.Cancel, style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
 
-        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (_) in
+        let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
             if let url = URL(string:UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.open(url)
             }
@@ -218,7 +218,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
 
     func displayHUD() {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud?.labelText = "Finding The Sun"
+        hud?.labelText = VSPFConstants.FindingSun
     }
 
     func hideHUD() {

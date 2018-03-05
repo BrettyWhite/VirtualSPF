@@ -89,9 +89,47 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //println("You selected cell #\(indexPath.row)!")
     }
-    // MARK: Location Stuff
-    func initLocationManager() {
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "explainSegue" {
+            let row = self.tableView.indexPathForSelectedRow!.row
+            let uvi = weatherArray[row]["uvIndex"]
+            let cellUVI: String = "\(uvi)"
+            let explainationViewController = (segue.destination as! ExplainationView)
+            explainationViewController.UVValue = cellUVI
+        }
+    }
+
+    func displayHUD() {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.labelText = VSPFConstants.FindingSun
+    }
+
+    func hideHUD() {
+        MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+    }
+
+    // MARK: - Delegate Functions
+    func didChangeProxyState(_ newState: NetworkState, data: JSON) {
+        state = newState
+
+        switch newState {
+        case .searching:
+            displayHUD()
+        case .finished:
+            hideHUD()
+            iterateResponse(data)
+        case .error:
+            hideHUD()
+        }
+    }
+}
+
+// MARK: Location Stuff
+extension ViewController {
+
+    func initLocationManager() {
         seenError = false
         locationFixAchieved = false
         locationManager = CLLocationManager()
@@ -145,7 +183,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
             locationManager.stopUpdatingLocation()
             let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
             WeatherModel.getWeather(location)
-            }
+        }
     }
 
     internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -182,11 +220,14 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
 
             self.present(alertController, animated: true, completion: nil)
 
-            default: break
+        default: break
         }
     }
+}
 
-    // MARK: other stuff
+// MARK: other stuff
+extension ViewController {
+
     @IBAction func openSettings(_ sender: UIButton) {
         let alertController = UIAlertController(
             title: VSPFConstants.LocationDisabled,
@@ -203,40 +244,5 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
         }
         alertController.addAction(openAction)
         self.present(alertController, animated: true, completion: nil)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "explainSegue" {
-            let row = self.tableView.indexPathForSelectedRow!.row
-            let uvi = weatherArray[row]["uvIndex"]
-            let cellUVI: String = "\(uvi)"
-            let explainationViewController = (segue.destination as! ExplainationView)
-            explainationViewController.UVValue = cellUVI
-        }
-    }
-
-    func displayHUD() {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud?.labelText = VSPFConstants.FindingSun
-    }
-
-    func hideHUD() {
-        MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-    }
-
-    // MARK: - Delegate Functions
-    func didChangeProxyState(_ newState: NetworkState, data: JSON) {
-        state = newState
-
-        switch newState {
-        case .searching:
-            displayHUD()
-        case .finished:
-            hideHUD()
-            iterateResponse(data)
-        case .error:
-            hideHUD()
-        }
     }
 }

@@ -160,6 +160,7 @@
 		75AABEB81B65A98B004E545E /* VirtualSPF */ = {
 			isa = PBXGroup;
 			children = (
+				8BA49D4B204D9AC6002FBC0E /* Constants */,
 				75AABF101B681BC5004E545E /* Main Classes */,
 				75AABF0D1B6818F7004E545E /* Misc Classes */,
 				75AABF061B67DCE7004E545E /* Cell Classes */,
@@ -172,8 +173,7 @@
 		75AABEB91B65A98B004E545E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07FFCF1D204A181100885B3E /* envVars.swift */,
-				8B43B3A31F82CBBA00E1B7FE /* sampleEnvVars.swift */,
+				75AABEBB1B65A98B004E545E /* AppDelegate.swift */,
 				75AABEBA1B65A98B004E545E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -190,12 +190,9 @@
 		75AABF0D1B6818F7004E545E /* Misc Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8B43B3A11F82A96800E1B7FE /* Constants.swift */,
 				75AABEF01B66A0C8004E545E /* UIColorExtension.swift */,
 				75AABEC41B65A98B004E545E /* LaunchScreen.xib */,
 				75AABEC21B65A98B004E545E /* Images.xcassets */,
-				75AABEBB1B65A98B004E545E /* AppDelegate.swift */,
-				8B957DB7204D954500D0E8D0 /* Colors.swift */,
 			);
 			name = "Misc Classes";
 			sourceTree = "<group>";
@@ -230,6 +227,17 @@
 				8B43B3A51F82CD7B00E1B7FE /* weatherModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8BA49D4B204D9AC6002FBC0E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8B43B3A31F82CBBA00E1B7FE /* sampleEnvVars.swift */,
+				07FFCF1D204A181100885B3E /* envVars.swift */,
+				8B957DB7204D954500D0E8D0 /* Colors.swift */,
+				8B43B3A11F82A96800E1B7FE /* Constants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

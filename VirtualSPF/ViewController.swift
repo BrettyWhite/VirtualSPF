@@ -191,7 +191,7 @@ extension ViewController {
                 placeMark = placeArray?[0]
 
                 if let city = placeMark.addressDictionary?["City"] as? NSString {
-                    self.navigationItem.title = "VirtualSPF- \(city)"
+                    self.navigationItem.title = "VirtualSPF - \(city)"
                 }
             })
 

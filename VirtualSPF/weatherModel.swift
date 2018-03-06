@@ -29,8 +29,7 @@ class WeatherModel {
     /// - Parameter coordinates: Send over CLLocation obtained from device's GPS
     class func getWeather(_ coordinates: CLLocation) {
 
-        let data: JSON = JSON.null
-        delegate?.didChangeState(NetworkState.searching, data: data)
+        delegate?.didChangeState(NetworkState.searching, data: JSON.null)
         let coord = coordinates.coordinate
         // If this line is erroring out, see sampleEnvVars.swift to see what you need to do
         let apiKey = VSPFProtectedConstants.DarkSkyKey

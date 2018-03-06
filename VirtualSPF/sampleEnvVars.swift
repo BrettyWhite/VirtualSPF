@@ -10,8 +10,7 @@ import Foundation
 
 /*
  * This is only a sample file. Please put all actual keys in a file called envVars.swift (you need to make it)
- * That file is git ignored (you dont want other people having your keys). Copy the struct into that file and rename
- * to VSPFProtectedConstants
+ * That file is git ignored (you dont want other people having your keys). Copy the struct into that file and rename to VSPFProtectedConstants
  */
 struct VSPFSampleProtectedConstants {
     static let DarkSkyKey = ""

@@ -1,7 +1,7 @@
 # Virtual SPF [![Build Status](https://travis-ci.org/brettywhite/VirtualSPF.svg?branch=master)](https://travis-ci.org/brettywhite/VirtualSPF)  [![CC 4.0][license-image]][license-url]
 
 <p align="center">
-<img src="http://buhzhyve.com/vspf.png" width="200">
+<img src="http://buhzhyve.com/vspf2.png" width="1000">
 </p>
 
 ## Overview
@@ -46,3 +46,7 @@ As I did this as a first Swift Project, there may be things that could be done b
 
 [license-url]: http://www.wtfpl.net
 [license-image]: https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square
+
+## Thanks
+
+Thanks to [@Fresh83](https://github.com/orgs/CampusChill/people/fresh83) for the logo :Rocket:

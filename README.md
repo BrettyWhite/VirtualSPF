@@ -49,4 +49,4 @@ As I did this as a first Swift Project, there may be things that could be done b
 
 ## Thanks
 
-Thanks to [@Fresh83](https://github.com/orgs/CampusChill/people/fresh83) for the logo :Rocket:
+Thanks to [@Fresh83](https://github.com/orgs/CampusChill/people/fresh83) for the logo :rocket:

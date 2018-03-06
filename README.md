@@ -24,6 +24,7 @@ Why might this interest you????
 
 ## Installation
 
+#### Step 1: 
 As this project does use [CocoaPods](https://cocoapods.org/), you will need to run this from the project directory. I am assuming you already have CocoaPods installed on your computer:
 
 ```bash
@@ -31,6 +32,13 @@ $ pod install
 ```
 
 If you are not familiar with CocoaPods yet, after running that command you will now open VirtualSPF.xcworkspace and not VirtualSPF.xcodeproj in Xcode
+
+#### Step 2:
+Once that is done, inside XCode, look for the Constants folder. In there you will see a file called `sampleEnvVars.swift`. You will need to make a new file called `envVars.swift` and copy the contents of the sample file into it - being careful to change the struct name to: `VSPFProtectedConstants`. This has been added to `.gitignore` already, and is the spot where you need to put your keys. 
+
+#### Step 3: 
+
+If you haven't done so already, go to the [Dark Sky API](https://darksky.net/dev) and sign up for your free key. Place that key in `envVars.swift`. At this point you can build the project.
 
 ## Support
 

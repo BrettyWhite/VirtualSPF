@@ -1,5 +1,9 @@
 # Virtual SPF [![Build Status](https://travis-ci.org/brettywhite/VirtualSPF.svg?branch=master)](https://travis-ci.org/brettywhite/VirtualSPF)  [![CC 4.0][license-image]][license-url]
 
+<p align="center">
+<img src="http://buhzhyve.com/vspf.png" width="200">
+</p>
+
 ## Overview
 
 Uses Swift 4 (working on Xcode 9)
@@ -30,7 +34,7 @@ If you are not familiar with CocoaPods yet, after running that command you will 
 
 ## Support
 
-As I did this as a first Swift Project, there may be things that could be done better than they are. I will try to update when possible and respond to any issues. 
+As I did this as a first Swift Project, there may be things that could be done better than they are (unit tests, view stuff, etc. - I never claimed to be perfect). I will try to update when possible and respond to any issues. 
 
 [license-url]: http://www.wtfpl.net
 [license-image]: https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square

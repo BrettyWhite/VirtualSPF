@@ -37,11 +37,7 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         super.viewDidLoad()
         delegate = self
         initLocationManager()
-
-        guage = LMGaugeView.init(frame: rect(0, 13, self.view.frame.size.width, self.view.frame.size.height-490))
-        guage.minValue = 0
-        guage.maxValue = 11
-        self.view.addSubview(guage)
+        initGuage()
 
     }
 
@@ -50,8 +46,19 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         // Dispose of any resources that can be recreated.
     }
 
+    internal func initGuage() {
+        guage = LMGaugeView.init(frame: rect(0, 13, self.view.frame.size.width, self.view.frame.size.height-490))
+        guage.minValue = 0
+        guage.maxValue = 11
+        guage.showLimitDot = true
+        guage.unitOfMeasurement = "Current UV Index"
+        self.view.addSubview(guage)
+    }
+
     // MARK: Response Handeling
     fileprivate func iterateResponse(_ data: JSON) {
+        let current = data["currently"]["uvIndex"].floatValue
+        guage.value = CGFloat(current)
         weatherArray = data["hourly"]["data"]
         tableView.reloadData()
     }
@@ -161,7 +168,7 @@ extension ViewController {
             alertController.addAction(cancelAction)
 
             let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
-                if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                if let url = URL(string: UIApplicationOpenSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
             }
@@ -270,4 +277,5 @@ extension ViewController {
     func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         return CGRect(x: x, y: y, width: width, height: height)
     }
+
 }

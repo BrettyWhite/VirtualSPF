@@ -34,14 +34,14 @@ class WeatherModel {
         // If this line is erroring out, see sampleEnvVars.swift to see what you need to do
         let apiKey = VSPFProtectedConstants.DarkSkyKey
         let weatherEndpoint: String = "https://api.darksky.net/forecast/\(apiKey)/\(coord.latitude),\(coord.longitude)?exclude=minutely,flags,daily,alerts"
-        
+
         Alamofire.request(weatherEndpoint, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
             if (response.error) != nil {
                 delegate?.didChangeState(NetworkState.error, data: JSON.null)
                 return
             }
             if let data = response.data {
-                let jsondata = JSON(data:data as Data)
+                let jsondata = JSON(data: data as Data)
                 let weather = jsondata
                 delegate?.didChangeState(NetworkState.finished, data: weather)
             }

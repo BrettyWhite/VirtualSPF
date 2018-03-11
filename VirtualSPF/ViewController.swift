@@ -60,6 +60,8 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         let current = data["currently"]["uvIndex"].floatValue
         guage.value = CGFloat(current)
         weatherArray = data["hourly"]["data"]
+        weatherArray.arrayObject?.remove(at: 0)
+        self.view.backgroundColor = decideColor(Int(current))
         tableView.reloadData()
     }
 
@@ -82,22 +84,8 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         self.cell!.timeLabel.text = TimeConverter.convertTime(unixtime: cellTime)
 
         let uvint: Int = Int(cellUVI)!
-        var strokeColor: UIColor
-        strokeColor = Colors.White
-
-        if uvint >= 11 {
-            strokeColor = Colors.Red
-        } else if uvint >= 8 {
-            strokeColor = Colors.Orange
-        } else if uvint >= 6 {
-            strokeColor = Colors.Yellow
-        } else if uvint >= 3 {
-            strokeColor = Colors.LightYellow
-        } else if uvint >= 0 {
-            strokeColor = Colors.Green
-        }
-
-        cell!.backgroundColor = strokeColor
+        cell!.backgroundColor = decideColor(uvint)
+        
         return cell!
     }
 
@@ -272,6 +260,25 @@ extension ViewController {
         }
         alertController.addAction(openAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func decideColor(_ uvint: Int) -> UIColor {
+        var strokeColor: UIColor
+        strokeColor = Colors.White
+        
+        if uvint >= 11 {
+            strokeColor = Colors.Red
+        } else if uvint >= 8 {
+            strokeColor = Colors.Orange
+        } else if uvint >= 6 {
+            strokeColor = Colors.Yellow
+        } else if uvint >= 3 {
+            strokeColor = Colors.LightYellow
+        } else if uvint >= 0 {
+            strokeColor = Colors.Green
+        }
+        
+        return strokeColor
     }
 
     func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {

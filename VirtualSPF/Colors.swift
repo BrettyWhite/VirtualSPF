@@ -15,4 +15,5 @@ struct Colors {
     static let LightYellow = UIColor(cgColor: UIColor(rgba: "#daff75").cgColor)
     static let Green =       UIColor(cgColor: UIColor(rgba: "#85ff75").cgColor)
     static let White =       UIColor(cgColor: UIColor(rgba: "#ffffff").cgColor)
+    static let Blue  =       UIColor(cgColor: UIColor(rgba: "#02d1fc").cgColor)
 }

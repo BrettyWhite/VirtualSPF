@@ -11,8 +11,9 @@ import Alamofire
 import SwiftyJSON
 import CoreLocation
 import MBProgressHUD
+import LMGaugeView
 
-class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var locationManager: CLLocationManager!
     var seenError: Bool = false
@@ -21,6 +22,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
     var weatherArray: JSON = [:]
     var cell: MainCell?
     var state: NetworkState = .finished
+    var guage: LMGaugeView!
 
     //outlets
     @IBOutlet var tableView: UITableView!
@@ -35,6 +37,12 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
         super.viewDidLoad()
         delegate = self
         initLocationManager()
+
+        guage = LMGaugeView.init(frame: rect(0, 13, self.view.frame.size.width, self.view.frame.size.height-490))
+        guage.minValue = 0
+        guage.maxValue = 11
+        self.view.addSubview(guage)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +67,7 @@ class ViewController: BaseViewController, WeatherDelegate, CLLocationManagerDele
 
         let uvi = weatherArray[indexPath.row]["uvIndex"]
         let hour = weatherArray[indexPath.row]["time"]
-        var cellTime: String = "\(hour)"
+        let cellTime: String = "\(hour)"
         let cellUVI: String = "\(uvi)"
 
         self.cell!.selectionStyle = UITableViewCellSelectionStyle.none
@@ -225,7 +233,7 @@ extension ViewController {
             let cancelAction = UIAlertAction(title: VSPFConstants.Cancel, style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
             let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
-                if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                if let url = URL(string: UIApplicationOpenSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
             }
@@ -251,11 +259,15 @@ extension ViewController {
         alertController.addAction(cancelAction)
 
         let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
-            if let url = URL(string:UIApplicationOpenSettingsURLString) {
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.open(url)
             }
         }
         alertController.addAction(openAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+
+    func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
     }
 }

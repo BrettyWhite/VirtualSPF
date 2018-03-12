@@ -31,7 +31,7 @@ class ExplainationView: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initView()
-        self.setScreenSize()
+       // self.setScreenSize()
     }
 
     func setScreenSize() {
@@ -50,14 +50,12 @@ class ExplainationView: BaseViewController {
     func initView() {
 
         let uvint: Int = Int(UVValue)!
-
         if uvint >= 11 {
 
             self.view.backgroundColor = Colors.Red
             uviLabel?.text = UVValue
             descLabel?.text = VSPFExplainations.ElevenDisc
             expLabel?.text = VSPFExplainations.ElevenExp
-
         } else if uvint >= 8 {
 
             self.view.backgroundColor = Colors.Orange

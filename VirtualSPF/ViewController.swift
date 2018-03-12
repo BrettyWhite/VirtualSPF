@@ -38,7 +38,6 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         delegate = self
         initLocationManager()
         initGuage()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +49,6 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         guage = LMGaugeView.init(frame: rect(0, 13, self.view.frame.size.width, self.view.frame.size.height-490))
         guage.minValue = 0
         guage.maxValue = 11
-        guage.showLimitDot = true
         guage.unitOfMeasurement = "Current UV Index"
         self.view.addSubview(guage)
     }
@@ -61,7 +59,7 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         guage.value = CGFloat(current)
         weatherArray = data["hourly"]["data"]
         weatherArray.arrayObject?.remove(at: 0)
-        self.view.backgroundColor = decideColor(Int(current))
+        self.view.backgroundColor = ColorChooser.decideColor(Int(current))
         tableView.reloadData()
     }
 
@@ -84,14 +82,18 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         self.cell!.timeLabel.text = TimeConverter.convertTime(unixtime: cellTime)
 
         let uvint: Int = Int(cellUVI)!
-        cell!.backgroundColor = decideColor(uvint)
-        
+        cell!.backgroundColor = ColorChooser.decideColor(uvint)
+
         return cell!
     }
 
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //println("You selected cell #\(indexPath.row)!")
     }
+
+    /*internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Upcoming UV indexes:"
+    }*/
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -260,25 +262,6 @@ extension ViewController {
         }
         alertController.addAction(openAction)
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func decideColor(_ uvint: Int) -> UIColor {
-        var strokeColor: UIColor
-        strokeColor = Colors.White
-        
-        if uvint >= 11 {
-            strokeColor = Colors.Red
-        } else if uvint >= 8 {
-            strokeColor = Colors.Orange
-        } else if uvint >= 6 {
-            strokeColor = Colors.Yellow
-        } else if uvint >= 3 {
-            strokeColor = Colors.LightYellow
-        } else if uvint >= 0 {
-            strokeColor = Colors.Green
-        }
-        
-        return strokeColor
     }
 
     func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {

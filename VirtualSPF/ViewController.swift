@@ -46,7 +46,11 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
     }
 
     internal func initGuage() {
+        if UIDevice.current.modelName == "iPhone10,3" || UIDevice.current.modelName == "iPhone10,6" {
+           guage = LMGaugeView.init(frame: rect(0, 10, self.view.frame.size.width, self.view.frame.size.height-550))
+        } else {
         guage = LMGaugeView.init(frame: rect(0, 13, self.view.frame.size.width, self.view.frame.size.height-490))
+        }
         guage.minValue = 0
         guage.maxValue = 11
         guage.unitOfMeasurement = "Current UV Index"
@@ -268,4 +272,17 @@ extension ViewController {
         return CGRect(x: x, y: y, width: width, height: height)
     }
 
+}
+
+extension UIDevice {
+    var modelName: String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8, value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+        return identifier
+    }
 }

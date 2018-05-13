@@ -17,7 +17,7 @@
 		75AABEBE1B65A98B004E545E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEBD1B65A98B004E545E /* ViewController.swift */; };
 		75AABEC11B65A98B004E545E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEBF1B65A98B004E545E /* Main.storyboard */; };
 		75AABEC31B65A98B004E545E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEC21B65A98B004E545E /* Images.xcassets */; };
-		75AABEEE1B6684EF004E545E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEF01B66A0C8004E545E /* UIColorExtension.swift */; };
 		75AABF081B67DD0F004E545E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* MainCell.swift */; };
 		75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0B1B6814FA004E545E /* CoreLocation.framework */; };
@@ -52,7 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75AABEEE1B6684EF004E545E /* (null) in Embed Frameworks */,
+				75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +466,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LMGaugeView/LMGaugeView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Refresher/Refresher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -473,6 +474,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LMGaugeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Refresher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

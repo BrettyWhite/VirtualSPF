@@ -12,6 +12,7 @@ import SwiftyJSON
 import CoreLocation
 import MBProgressHUD
 import LMGaugeView
+import Refresher
 
 class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -65,6 +66,10 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         weatherArray.arrayObject?.remove(at: 0)
         self.view.backgroundColor = ColorChooser.decideColor(Int(current))
         tableView.reloadData()
+        tableView.addPullToRefreshWithAction {
+            self.initLocationManager()
+            self.tableView.stopPullToRefresh()
+        }
     }
 
     // MARK: Table Stuff
@@ -141,9 +146,11 @@ extension ViewController {
     func initLocationManager() {
         seenError = false
         locationFixAchieved = false
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        if (locationManager == nil) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        }
 
         if CLLocationManager.authorizationStatus() == .notDetermined {
 
@@ -194,7 +201,7 @@ extension ViewController {
             let geoCoder = CLGeocoder()
 
             geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
-                let placeArray = placemarks as [CLPlacemark]!
+                let placeArray = placemarks as [CLPlacemark]?
 
                 var placeMark: CLPlacemark!
                 placeMark = placeArray?[0]

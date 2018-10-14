@@ -17,7 +17,7 @@
 		75AABEBE1B65A98B004E545E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEBD1B65A98B004E545E /* ViewController.swift */; };
 		75AABEC11B65A98B004E545E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEBF1B65A98B004E545E /* Main.storyboard */; };
 		75AABEC31B65A98B004E545E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AABEC21B65A98B004E545E /* Images.xcassets */; };
-		75AABEEE1B6684EF004E545E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AABEF11B66A0C8004E545E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABEF01B66A0C8004E545E /* UIColorExtension.swift */; };
 		75AABF081B67DD0F004E545E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AABF071B67DD0F004E545E /* MainCell.swift */; };
 		75AABF0C1B6814FA004E545E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AABF0B1B6814FA004E545E /* CoreLocation.framework */; };
@@ -52,7 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75AABEEE1B6684EF004E545E /* (null) in Embed Frameworks */,
+				75AABEEE1B6684EF004E545E /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +260,6 @@
 				75AABEEF1B6684EF004E545E /* Embed Frameworks */,
 				7555AFC71EDA58F100112C72 /* Run Swiftlint */,
 				90D33179A4B39305F83E8871 /* [CP] Embed Pods Frameworks */,
-				234740CB7178A42104C3C001 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,7 +279,6 @@
 				75FFA0131EDA702E008E8114 /* Frameworks */,
 				75FFA0141EDA702E008E8114 /* Resources */,
 				30B511517875CBA69F43E74A /* [CP] Embed Pods Frameworks */,
-				3495ACDBECC5F83FC293FACA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,21 +372,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		234740CB7178A42104C3C001 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPF/Pods-VirtualSPF-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		30B511517875CBA69F43E74A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,21 +390,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3495ACDBECC5F83FC293FACA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualSPFTests/Pods-VirtualSPFTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		44CB7C0DD35183D5869CEC07 /* [CP] Check Pods Manifest.lock */ = {

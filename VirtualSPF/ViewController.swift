@@ -47,8 +47,11 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
     }
 
     internal func initGuage() {
-        if UIDevice.current.modelName == "iPhone10,3" || UIDevice.current.modelName == "iPhone10,6" {
-           guage = LMGaugeView.init(frame: rect(0, 10, self.view.frame.size.width, self.view.frame.size.height-550))
+        print(UIDevice.current.modelName)
+        if UIDevice.current.modelName == "iPhone10,3" || UIDevice.current.modelName == "iPhone10,6" ||
+           UIDevice.current.modelName == "iPhone11,2" || UIDevice.current.modelName == "iPhone11,8" ||
+           UIDevice.current.modelName == "iPhone11,4" || UIDevice.current.modelName == "x86_64" {
+           guage = LMGaugeView.init(frame: rect(0, 10, self.view.frame.size.width, self.view.frame.size.height-650))
         } else {
         guage = LMGaugeView.init(frame: rect(0, 13, self.view.frame.size.width, self.view.frame.size.height-490))
         }

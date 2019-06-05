@@ -89,7 +89,7 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
         let cellTime: String = "\(hour)"
         let cellUVI: String = "\(uvi)"
 
-        self.cell!.selectionStyle = UITableViewCellSelectionStyle.none
+        self.cell!.selectionStyle = UITableViewCell.SelectionStyle.none
         self.cell!.uviLabel.text = cellUVI
         self.cell!.timeLabel.text = TimeConverter.convertTime(unixtime: cellTime)
 
@@ -172,7 +172,7 @@ extension ViewController {
             alertController.addAction(cancelAction)
 
             let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
-                if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
             }
@@ -244,7 +244,7 @@ extension ViewController {
             let cancelAction = UIAlertAction(title: VSPFConstants.Cancel, style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
             let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
-                if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
             }
@@ -270,7 +270,7 @@ extension ViewController {
         alertController.addAction(cancelAction)
 
         let openAction = UIAlertAction(title: VSPFConstants.OpenSettings, style: .default) { (_) in
-            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+            if let url = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(url)
             }
         }

@@ -47,7 +47,7 @@ class ViewController: BaseViewController, WeatherDelegate, LMGaugeViewDelegate, 
     }
 
     internal func initGuage() {
-        print(UIDevice.current.modelName)
+        //print(UIDevice.current.modelName)
         if UIDevice.current.modelName == "iPhone10,3" || UIDevice.current.modelName == "iPhone10,6" ||
            UIDevice.current.modelName == "iPhone11,2" || UIDevice.current.modelName == "iPhone11,8" ||
            UIDevice.current.modelName == "iPhone11,4" || UIDevice.current.modelName == "x86_64" {
@@ -149,7 +149,7 @@ extension ViewController {
     func initLocationManager() {
         seenError = false
         locationFixAchieved = false
-        if (locationManager == nil) {
+        if locationManager == nil {
             locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest

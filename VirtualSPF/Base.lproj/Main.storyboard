@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APt-At-ljP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APt-At-ljP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,21 +41,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2015 other crap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-ef-ZmM">
-                                                    <rect key="frame" x="90" y="3" width="300" height="70"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2015 other crap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-ef-ZmM">
+                                                    <rect key="frame" x="119" y="3" width="216" height="70"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gaS-ef-ZmM" secondAttribute="bottom" constant="4" id="61L-eO-9QL"/>
+                                                <constraint firstItem="gaS-ef-ZmM" firstAttribute="top" secondItem="J4c-LJ-hB1" secondAttribute="top" constant="3" id="05N-Qa-JaR"/>
                                                 <constraint firstItem="Jo8-gu-d4e" firstAttribute="leading" secondItem="J4c-LJ-hB1" secondAttribute="leading" constant="20" id="6rx-dm-T09"/>
-                                                <constraint firstItem="gaS-ef-ZmM" firstAttribute="top" secondItem="J4c-LJ-hB1" secondAttribute="top" constant="3" id="M5M-ja-I2e"/>
+                                                <constraint firstAttribute="trailing" secondItem="gaS-ef-ZmM" secondAttribute="trailing" constant="40" id="Z6J-gv-oM2"/>
+                                                <constraint firstAttribute="bottom" secondItem="gaS-ef-ZmM" secondAttribute="bottom" constant="4" id="Zo3-Bm-YLi"/>
                                                 <constraint firstAttribute="bottom" secondItem="Jo8-gu-d4e" secondAttribute="bottom" constant="-7" id="cGt-aw-byN"/>
-                                                <constraint firstAttribute="trailing" secondItem="gaS-ef-ZmM" secondAttribute="trailing" constant="-15" id="ff5-Wr-91I"/>
-                                                <constraint firstItem="gaS-ef-ZmM" firstAttribute="leading" secondItem="Jo8-gu-d4e" secondAttribute="trailing" constant="-21" id="hfs-Ot-mjt"/>
                                                 <constraint firstItem="Jo8-gu-d4e" firstAttribute="top" secondItem="J4c-LJ-hB1" secondAttribute="top" constant="-7" id="jk6-IC-kHM"/>
+                                                <constraint firstItem="gaS-ef-ZmM" firstAttribute="leading" secondItem="Jo8-gu-d4e" secondAttribute="trailing" constant="8" id="oWB-A0-dJk"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
